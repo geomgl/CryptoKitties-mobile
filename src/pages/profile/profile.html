@@ -8,11 +8,16 @@
     
     <ion-content padding>
         <p>
-            Welcome to your profile! How fun!
+            Welcome <b>{{this.username}}</b> to your profile! How fun!
         </p>
     
-    <div padding>
+        <div padding>
+                <button ion-button block (click)="navigateToCharities()">See Charities</button>
         <button ion-button block (click)="navigateToHome()">Log Out</button>
     </div>
+
+ 
+
+
 
     </ion-content>

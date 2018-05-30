@@ -8,14 +8,23 @@ import { ProfilePage } from '../profile/profile';
 })
 export class LoginPage {
 
+  public username: string;
+  public password: string;
+
   constructor(public navCtrl: NavController) {
 
   }
   
   navigateToProfile() {
-    this.navCtrl.push(ProfilePage);
-
+    this.navCtrl.push(ProfilePage, {
+      username:  this.username,
+      password:  this.password
+    })
   }
+
+
+
+
 
 
 }
