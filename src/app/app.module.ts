@@ -10,7 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegistrationPage } from '../pages/registration/registration';
 import { ProfilePage } from '../pages/profile/profile';
 import { CharitiesPage } from '../pages/charities/charities';
-import { ApplePage } from '../pages/company_list/apple/apple';
+import { CharityProfilePage } from '../pages/charity_profile/charity_profile';
 
 @NgModule({ 
   declarations: [
@@ -20,7 +20,7 @@ import { ApplePage } from '../pages/company_list/apple/apple';
     RegistrationPage,
     ProfilePage,
     CharitiesPage,
-    ApplePage
+    CharityProfilePage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { ApplePage } from '../pages/company_list/apple/apple';
     RegistrationPage,
     ProfilePage,
     CharitiesPage,
-    ApplePage
+    CharityProfilePage
   ],
   providers: [
     StatusBar,

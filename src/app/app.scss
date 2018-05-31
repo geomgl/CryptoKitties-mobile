@@ -1,6 +1,6 @@
 // http://ionicframework.com/docs/theming/
 
-@import 'pages/company_list/apple/apple.scss';
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,7 +15,7 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-ion-header {
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,8 +24,12 @@ ion-header {
 }
 
 
-ion-content  {
-    background-color:lightblue;
+.content  {
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
 }
     
 
