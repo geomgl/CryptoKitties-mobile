@@ -1,34 +1,66 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-        <!-- <ion-icon name="barcode"></ion-icon> -->
-      Welcome to Allocate
-      <!-- <ion-icon name="barcode"></ion-icon> -->
-    </ion-title>
+  
+      <ion-navbar>
+          <ion-title> 
+            <div class="title">    
+              <img src="../../assets/imgs/cryptolion.png" float-left  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>  
+              <div style="color:black">CryptoSafari</div> 
+            </div>
+          </ion-title>
+
+                <ion-buttons end>
+                    <button ion-button icon-only (click)="navigateToLogin()">
+                      <ion-title>Sign In</ion-title>
+                    </button>
+                    <button  ion-button icon-only (click)="navigateToCharities()">
+                       <ion-title><div style= "color:black"> FAQs</div></ion-title>
+                      </button>
+                      
+              <button ion-button icon-only (click)="navigateToProfile()">
+                <ion-icon name="md-menu"></ion-icon>
+              </button>
+              
+            </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  Set your monthly charity allocation. Millions have already donated!
-<p>:) :) :) :)</p>
+  <ion-grid >
+     
+    <ion-row class="welcome">
+       <ion-col><br></ion-col>
+        <ion-col align-self-center justify-content-end>
+          <div>
+            <h1>Collectible.</h1>
+            <h1>Breedable.</h1>
+            <h1>Charitable.</h1>
+          </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-img [width]="200" [height]="293" class="cryptoimage" src="../../assets/imgs/CryptoSafari.png" ></ion-img>
+        </div>
+        </ion-col>
+        <ion-col><br></ion-col>
+       
+        
+      
+    </ion-row>
+    
 
-
-
-<br>
- <button ion-button color="primary" (click)="navigateToLogin()">Go to Login</button>
- <a ion-button (click)="navigateToRegistration()">Go to Registration</a>
-
-    <button class: "nav button" ion-button block (click)="navigateToCharities()">See Charities</button>
-
-  <!-- <div> <form>
-    <legend><b></b></legend>
-
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="password" placeholder="Password">
-    <input type="submit" value="Submit">
-</form></div> -->
-
-
-  
+    <ion-row justify-content-center style="text-align:center">
+     
+     <div>
+        <br>
+      <h4 style="text-align:center" > Wildlife conservation through collecting,
+         breeding and selling digital animals.</h4>
+          <br>
+        </div>
+    </ion-row>
+    <ion-row justify-content-center >
+        <a ion-button (click)="navigateToRegistration()">Start Now</a>
+        <br>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 

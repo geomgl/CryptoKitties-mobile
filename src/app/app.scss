@@ -20,16 +20,18 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    background-color:#5677fc;
+    background-color:primary;
 }
 
+.toolbar-background {
+    $toolbar-background: primary;
+    color:primary;
+    text-align: center;
+  }
 
 .content  {
-    background-color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
+    text-align: center;
+    text-emphasis: bold;
 }
     
 

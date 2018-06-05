@@ -33,14 +33,24 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+// #FD5418 is client orange
+
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #FD5418,
+  secondary:  #03a9f4,
+  danger:     #e91e63,
   light:      #f4f4f4,
   dark:       #222
 );
+$navbar-ios-title-text-align: center;
+$navbar-md-title-text-align: center;
 
+$toolbar-background: white;
+$toolbar-title-text-color: #FD5418;
+$toolbar-ios-title-text-color:#FD5418;
+$toolbar-ios-button-color: #FD5418;
+$toolbar-md-title-text-color: #FD5418;
+$toolbar-md-button-color: #FD5418;
 
 // App iOS Variables
 // --------------------------------------------------

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CharitiesPage } from '../charities/charities';
+import { PaymentsPage } from '../payments/payments';
+import { PortfolioPage } from '../portfolio/portfolio';
 
 @Component({
   selector: 'page-profile',
@@ -33,6 +35,16 @@ export class ProfilePage {
   }
   navigateToCharities() {
     this.navCtrl.push(CharitiesPage);
+
+  }
+
+  navigateToPayments() {
+    this.navCtrl.push(PaymentsPage);
+
+  }
+
+  navigateToPortfolio() {
+    this.navCtrl.push(PortfolioPage);
 
   }
   

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CharitiesPage } from '../charities/charities';
+import { PortfolioPage } from '../portfolio/portfolio';
+import { ProfilePage } from '../profile/profile';
+import { Creditcard } from '../../models/creditcard';
 import { Charity } from '../../models/charity';
-import { PaymentsPage } from '../payments/payments';
 
 /**
- * Generated class for the ApplePage page.
+ * Generated class for the PaymentsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,33 +14,32 @@ import { PaymentsPage } from '../payments/payments';
 
 @IonicPage()
 @Component({
-  selector: 'page-charity_profile',
-  templateUrl: 'charity_profile.html',
+  selector: 'page-payments',
+  templateUrl: 'payments.html',
 })
-export class CharityProfilePage {
+export class PaymentsPage {
 
   public charity: Charity;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+
   this.charity = this.navParams.get("charity");
 
   }
-  
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CharityProfilePage');
+    console.log('ionViewDidLoad PaymentsPage');
+  }
+  navigateToPortfolio() {
+    this.navCtrl.push(PortfolioPage);
+
   }
 
-  navigateToCharities() {
-    this.navCtrl.push(CharitiesPage);
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage);
 
   }
 
-  navigateToPayments(charity: Charity) {
-    this.navCtrl.push(PaymentsPage, {
-        charity: charity
-    });
-  }
 
 }

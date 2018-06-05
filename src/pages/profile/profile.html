@@ -7,14 +7,20 @@
     </ion-header>
     
     <ion-content padding>
-        <p>
-            Welcome <b>{{this.username}}</b> to your profile! How fun!
+        <p class="profileinfo">
+           <b> {{this.username}}</b><br>
+           {{this.firstName}} <br>
+           {{this.lastName}}<br>
         </p>
     
         <div padding>
-                <button ion-button block (click)="navigateToCharities()">See Charities</button>
-        <button ion-button block (click)="navigateToHome()">Log Out</button>
+                <button ion-button (click)="navigateToCharities()">See Charities</button>
+        <button ion-button (click)="navigateToHome()">Log Out</button>
     </div>
+
+    <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
+
+    <button ion-button (click)="navigateToPortfolio()">My Portfolio</button>
 
  
 
