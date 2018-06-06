@@ -15,5 +15,44 @@ page-portfolio {
         }
      
     }
+    .title {
+        // text-align: left;
+        // align-content: center;
+        text-emphasis: bold;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    
+
+.profilepic {
+    margin: auto;
+    height: 200px; 
+    width: 200px; 
+  // border: 2px solid #fff;
+   border-radius: 50%;
+   box-shadow: 0 0 5px gray;
+   display: block;
+}
+
+
+.stats {
+    text-emphasis: bold;
+    font-size: 30px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: map-get($colors, primary);
+}
+
+.profileText {
+    text-emphasis: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
 
 }

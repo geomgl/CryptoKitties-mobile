@@ -11,8 +11,8 @@
             <div style="float:left; display:flex; align-self: center;"align-title:center>Charities</div>
             
             <div class="title" style="float:center;">
-                <img src="../../assets/imgs/cryptolion.png" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
-                <div style="color:black">CryptoSafari</div>
+                <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
+                <div style="color:black" (click)="navigateToHome()">CryptoSafari</div>
             </div>
         </ion-title>
         <ion-buttons end>
@@ -27,10 +27,63 @@
 
 
 <ion-content padding>
+        <ion-segment [(ngModel)]="icons" color="primary">
+                <ion-segment-button value="logo-octocat" (ionSelect)="navigateToProfile()">
+                        <ion-icon name="logo-octocat"></ion-icon>
+                      </ion-segment-button>   
+                <ion-segment-button value="stats" (ionSelect)="navigateToPortfolio()">
+                  <ion-icon name="stats"></ion-icon>
+                </ion-segment-button>
+                <ion-segment-button value="charities">
+                  <ion-icon name="ribbon"></ion-icon>
+                </ion-segment-button>
+        </ion-segment>
+        <ion-grid>
+                <ion-row><br></ion-row>
+                <ion-row justify-content-center>
+                                <!-- align="left" -->
+                    <ion-col>
+                        <div>
+                            <ion-img class="profilepic"  src="../../assets/imgs/user.png" ></ion-img>
+                            <br>
+                            <!-- <div class="profileText">{{this.firstName}} {{this.lastName}}</div> -->
+                        </div>
+                    </ion-col>
+                    <ion-col align-self-center justify-content-end>
+                        <h4 class="stats">$2,500</h4><br>
+                        Raised for Conservation
+                    </ion-col>
+                    <ion-col align-self-center justify-content-end>
+                        <h4 class="stats">7</h4><br>
+                        Conservation Projects
+                    </ion-col>
+                    <ion-col align-self-center justify-content-end>
+                        <h4 class="stats">25</h4><br>
+                        Animals in Nature Reserve
+                    </ion-col>
+                </ion-row>
+    <ion-row><br></ion-row>
+    <ion-row><br></ion-row>
+    <ion-row *ngFor="let row of grid">
+        <ion-col *ngFor="let charity of row">
+                <ion-avatar item-start>
+                    <ion-icon  name={{charity.button}} (click)="navigateToCharityProfile(charity)" ></ion-icon>
+                </ion-avatar>
+                <h2  (click)="navigateToCharityProfile(charity)" >{{charity.name}}</h2>
+                <p  (click)="navigateToCharityProfile(charity)" >{{charity.mission}}</p>
+        </ion-col>
+    </ion-row>
+<!-- <ion-row>
+    <ion-col *ngFor="let charity of charities">
+        <ion-avatar item-start>
+        <ion-icon  name={{charity.button}} (click)="navigateToCharityProfile(charity)" ></ion-icon>
+            </ion-avatar>
+        <h2  (click)="navigateToCharityProfile(charity)" >{{charity.name}}</h2>
+         <p  (click)="navigateToCharityProfile(charity)" >{{charity.mission}}</p>
+    </ion-col>
 
-<p>
-
-
+</ion-row> -->
+<!-- <ion-row>
 <ion-list>
     <ion-item *ngFor="let charity of charities">
         <ion-avatar item-start>
@@ -40,9 +93,12 @@
         <p  (click)="navigateToCharityProfile(charity)" >{{charity.mission}}</p>
     </ion-item>
 </ion-list>
-
-</p>
+</ion-row> -->
+<ion-row><br></ion-row>
+<ion-row><br></ion-row>
+<ion-row justify-content-center>
 <button ion-button (click)="navigateToHome()">Home</button>
-
+</ion-row>
+</ion-grid>
 
 </ion-content>

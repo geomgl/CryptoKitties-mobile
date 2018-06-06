@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { CharitiesPage } from '../charities/charities';
+import { ProfilePage } from '../profile/profile';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the PortfolioPage page.
@@ -18,11 +20,14 @@ import { CharitiesPage } from '../charities/charities';
 export class PortfolioPage {
 
   
+  icons: string;
+
   @ViewChild('doughnutCanvas') doughnutCanvas;
  
   doughnutChart: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.icons = "stats";
   };
 
 
@@ -59,6 +64,20 @@ export class PortfolioPage {
   });
   }
 
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage);
+
+  }
   
+
+  navigateToCharities() {
+    this.navCtrl.push(CharitiesPage);
+
+  }
+
+  navigateToHome() {
+    this.navCtrl.push(HomePage);
+
+  }
 
 }

@@ -23,6 +23,41 @@ page-profile {
    box-shadow: 0 0 5px gray;
    display: block;
 }
+
+.cryptoanimal {
+    margin: auto;
+    height: 200px; 
+    width: 200px; 
+    background: white;
+  // border: 2px solid #fff;
+//    display: block;
+}
+.col-bottom{
+    border-bottom: solid black;
+    border-top: solid black;
+    }
+
+.col-left{
+    border-bottom: solid black;
+    border-top: solid black;
+    border-left: solid black;
+}
+
+.col-right{
+    border-bottom: solid black;
+    border-top: solid black;
+    border-right: solid black;
+}
+
+.grass {
+    margin: auto;
+    height: 200px; 
+    width: 800px; 
+    background: white;
+  // border: 2px solid #fff;
+//    display: block;
+}
+
 .stats {
     text-emphasis: bold;
     font-size: 30px;
@@ -40,6 +75,19 @@ page-profile {
     align-items: center;
 }
 
+.cryptoAnimalText {
+    text-emphasis: bold;
+    font-size: 40px;
+    color: map-get($colors, primary);
 
+}
+
+.hline-bottom {
+    padding-bottom: 10px;
+    border-bottom: 2px solid map-get($colors, primary); 
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 }

@@ -5,5 +5,6 @@ export class Charity {
     mission: string;
     description: string;
     button: string;
+    logo: string;
 
 }
