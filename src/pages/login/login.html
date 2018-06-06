@@ -1,22 +1,25 @@
 <ion-header>
     <ion-navbar>
-            <button ion-button icon-only menuToggle>
-                    <ion-icon name="md-menu"></ion-icon>
-                  </button>
         <ion-title>
-            Login Page
-        </ion-title>   
+            <div style="float:left; display:flex; align-self: center;"align-title:center>Sign In</div>
+            
+            <div class="title" style="float:center;">
+                <img src="../../assets/imgs/cryptolion.png" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
+                <div style="color:black">CryptoSafari</div>
+            </div>
+        </ion-title>
         <ion-buttons end>
-                <button ion-button icon-only (click)="navigateToProfile()">
-                  <ion-icon name="options"></ion-icon>
-                </button>
-              </ion-buttons>
+  
+            <button ion-button icon-only (click)="navigateToProfile()">
+                <ion-icon name="md-menu"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
  
-        <h3>Login to your account</h3>
+        <h3>Welcome Back to the Safari</h3>
    
 
     <ion-list>
@@ -37,5 +40,5 @@
             <button ion-button block (click)="navigateToProfile()">Sign In</button>
           </div>
 
-
+        
 </ion-content>

@@ -4,6 +4,7 @@ import { LoginPage } from '../login/login';
 import { RegistrationPage } from '../registration/registration';
 import { ProfilePage } from '../profile/profile';
 import { CharitiesPage } from '../charities/charities';
+import { PortfolioPage } from '../portfolio/portfolio';
 
 @Component({
   selector: 'page-home',

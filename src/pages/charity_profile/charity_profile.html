@@ -7,8 +7,25 @@
 <ion-header style="background-color:#5677fc" >
   <!-- <link rel=”stylesheet” type="text/css" href=”apple.scss”>  -->
   <ion-navbar>
-    <ion-title>{{charity.name}}</ion-title>   
+      <ion-title>
+          <div style="float:left; display:flex; align-self: center;"align-title:center>{{charity.name}}</div>
+          
+          <div class="title" style="float:center;">
+              <img src="../../assets/imgs/cryptolion.png" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
+              <div style="color:black">CryptoSafari</div>
+          </div>
+      </ion-title>
+      <ion-buttons end>
+
+          <button ion-button icon-only (click)="navigateToProfile()">
+              <ion-icon name="md-menu"></ion-icon>
+          </button>
+      </ion-buttons>
   </ion-navbar>
+  
+  <!-- <ion-navbar>
+    <ion-title>{{charity.name}}</ion-title>   
+  </ion-navbar> -->
 
 
 </ion-header>
@@ -16,6 +33,8 @@
 
 style="background-color:grey; font:roboto; color:white"
 <ion-content  padding class="my-background">
+
+<h1>{{charity.name}}</h1>
 
     {{charity.description}}
     <div padding>

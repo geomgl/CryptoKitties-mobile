@@ -1,29 +1,90 @@
 <ion-header>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1-beta.2/Chart.min.js"></script>
+        <script src="angles.js"></script>
+
+        <ion-tabs tabPlacement="top"> 
+            <ion-tab tabIcon=“card” tabTitle=“portfolio” [root]="portfolio"></ion-tab>
+            <ion-tab tabIcon=“stats” tabTitle=“charities” [root]="charities"></ion-tab>
+        </ion-tabs>
+        
         <ion-navbar>
-            <ion-title>
-                Profile Page
-            </ion-title>
-        </ion-navbar>
-    </ion-header>
+                <ion-title>
+                    <div style="float:left; display:flex; align-self: center;"align-title:center>My Profile</div>
+                    
+                    <div class="title" style="float:center;">
+                        <img src="../../assets/imgs/cryptolion.png" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
+                        <div style="color:black">CryptoSafari</div>
+                    </div>
+                </ion-title>
+                <ion-buttons end>
+          
+                    <button ion-button icon-only (click)="navigateToProfile()">
+                        <ion-icon name="md-menu"></ion-icon>
+                    </button>
+                </ion-buttons>
+            </ion-navbar>
+            <!-- primary class="withNavbar" -->
+            <!-- <ion-tabs>
+                    <ion-tab [root]="tab1Root"></ion-tab>
+                    <ion-tab [root]="tab2Root"></ion-tab>
+            </ion-tabs> -->
+</ion-header>
+
+<ion-content padding ng-app="app">
     
-    <ion-content padding>
-        <p class="profileinfo">
-           <b> {{this.username}}</b><br>
-           {{this.firstName}} <br>
-           {{this.lastName}}<br>
-        </p>
-    
-        <div padding>
+    <ion-grid>
+        <ion-row justify-content-center>
+                        <!-- align="left" -->
+            <ion-col>
+                <div>
+                    <ion-img class="profilepic"  src="../../assets/imgs/user.png" ></ion-img>
+                    <br>
+                    <div class="profileText">{{this.firstName}} {{this.lastName}}</div>
+                </div>
+            </ion-col>
+            <ion-col align-self-center justify-content-end>
+                <h4 class="stats">$2,500</h4><br>
+                Raised for Conservation
+            </ion-col>
+            <ion-col align-self-center justify-content-end>
+                <h4 class="stats">7</h4><br>
+                Conservation Projects
+            </ion-col>
+            <ion-col align-self-center justify-content-end>
+                <h4 class="stats">25</h4><br>
+                Animals in Nature Reserve
+            </ion-col>
+        </ion-row>
+       
+        <ion-row justify-content-center padding>
+            <ion-col><br></ion-col>
+            <ion-card>
+                <ion-card-header>
+                    My Impact
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #doughnutCanvas ></canvas>
+                </ion-card-content>
+            </ion-card>
+            <div ng-controller="MainCtrl">
+  <canvas piechart options="animation: true, " legend=true responsive=true data="chart" width="300" height="300"></canvas>
+            </div>
+        </ion-row>
+
+
+
+
+        <ion-row justify-content-center style="text-align:center">
+            <div padding>
                 <button ion-button (click)="navigateToCharities()">See Charities</button>
-        <button ion-button (click)="navigateToHome()">Log Out</button>
-    </div>
+                <button ion-button (click)="navigateToHome()">Log Out</button>
+            </div>
+        </ion-row>
+        <ion-row justify-content-center style="text-align:center">
+            <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
+            <button ion-button (click)="navigateToPortfolio()">My Portfolio</button>
+        </ion-row>
+    </ion-grid>
 
-    <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
-
-    <button ion-button (click)="navigateToPortfolio()">My Portfolio</button>
-
- 
-
-
-
-    </ion-content>
+</ion-content>

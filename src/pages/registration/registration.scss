@@ -1,0 +1,39 @@
+page-registration {
+    
+    .title {
+        // text-align: left;
+        // align-content: center;
+        text-emphasis: bold;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    
+    .pageName {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        float:left; 
+        
+    }
+    
+
+    .title3 {
+        // position: absolute;
+        // top: 20%;
+        height: 100%;
+        display: block;
+        align-items: center;
+        justify-content:left;
+    }
+
+
+    .background {
+        background: url("../../assets/imgs/backsplash.png") no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+}
+    
+

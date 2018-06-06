@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavControllerBase } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
+import { CharitiesPage } from '../charities/charities';
 
 @Component({
   selector: 'page-registration',
@@ -28,6 +29,11 @@ export class RegistrationPage {
       email:  this.email,
       password:  this.password,
     })
+
+  }
+
+  navigateToCharities() {
+    this.navCtrl.push(CharitiesPage);
 
   }
 }
