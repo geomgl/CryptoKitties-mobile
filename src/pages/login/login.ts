@@ -9,7 +9,7 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  public username: string;
+  public email: string;
   public password: string;
 
   constructor(public navCtrl: NavController) {
@@ -18,7 +18,7 @@ export class LoginPage {
   
   navigateToProfile() {
     this.navCtrl.push(ProfilePage, {
-      username:  this.username,
+      email:  this.email,
       password:  this.password
     })
   }

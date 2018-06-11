@@ -2,13 +2,6 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1-beta.2/Chart.min.js"></script>
         <script src="angles.js"></script>
-
-        <!-- <ion-tabs> 
-            <ion-tab tabIcon=“card” tabTitle=“portfolio” [root]="portfolio"></ion-tab>
-            <ion-tab tabIcon=“stats” tabTitle=“charities” [root]="charities"></ion-tab>
-        </ion-tabs> -->
-
-
         
         <ion-navbar>
                 <ion-title>
@@ -26,23 +19,18 @@
                     </button>
                 </ion-buttons>
             </ion-navbar>
-            <!-- primary class="withNavbar" -->
-            <!-- <ion-tabs>
-                    <ion-tab [root]="tab1Root"></ion-tab>
-                    <ion-tab [root]="tab2Root"></ion-tab>
-            </ion-tabs> -->
 </ion-header>
 
-<ion-content padding ng-app="app">
+<ion-content ng-app="app">
         <ion-segment [(ngModel)]="icons" color="primary">
                 <ion-segment-button value="logo-octocat">
-                        <ion-icon name="logo-octocat"></ion-icon>
+                        <ion-icon class="tabs" name="logo-octocat"></ion-icon>
                       </ion-segment-button>   
                 <ion-segment-button value="stats" (ionSelect)="navigateToPortfolio()">
-                  <ion-icon name="stats"></ion-icon>
+                  <ion-icon class="tabs" name="stats"></ion-icon>
                 </ion-segment-button>
                 <ion-segment-button value="charities" (ionSelect)="navigateToCharities()">
-                  <ion-icon name="ribbon"></ion-icon>
+                  <ion-icon class="tabs" name="ribbon"></ion-icon>
                 </ion-segment-button>
         </ion-segment>
 
@@ -59,20 +47,20 @@
                 <div>
                     <ion-img class="profilepic"  src="../../assets/imgs/user.png" ></ion-img>
                     <br>
-                    <div class="profileText">{{this.firstName}} {{this.lastName}}</div>
+                    <div class="statText">{{this.firstName}} {{this.lastName}}</div>
                 </div>
             </ion-col>
             <ion-col align-self-center justify-content-end>
                 <h4 class="stats">$2,500</h4><br>
-                Raised for Conservation
+                <div>Raised for Conservation </div>
             </ion-col>
             <ion-col align-self-center justify-content-end>
                 <h4 class="stats">7</h4><br>
-                Conservation Projects
+                <div> Conservation Projects</div>
             </ion-col>
             <ion-col align-self-center justify-content-end>
                 <h4 class="stats">25</h4><br>
-                Animals in Nature Reserve
+                <div>Animals in Nature Reserve</div>
             </ion-col>
         </ion-row>
        <ion-row><br></ion-row>
@@ -82,7 +70,16 @@
            <div class="block_1 hline-bottom"></div></ion-col>
            
     </ion-row>
-
+    <ion-row justify-content-center *ngFor="let row of grid">
+            <ion-col justify-content-center *ngFor="let cryptoanimal of row">
+                    <ion-avatar item-start>
+                        <div>
+                            <ion-img class="cryptoanimal"  src={{cryptoanimal.image}}></ion-img>
+                        </div>
+                    </ion-avatar>
+            </ion-col>
+    </ion-row>
+<!-- 
         <ion-row justify-content-center>
             <ion-col>
                 <div>
@@ -126,12 +123,6 @@
                                  <ion-img class="cryptoanimal"   src="../../assets/imgs/cryptokoala.gif" ></ion-img>
                                 </div>
                             </ion-col>
-            </ion-row>
-        <!-- <ion-row justify-content-center>
-                <div>
-                <ion-img class="grass" src="../../assets/imgs/cryptograss.gif" ></ion-img>
-               </div>
-                
             </ion-row> -->
 <!-- </ion-grid>
 <ion-grid *ngSwitchCase="'stats'">
@@ -180,9 +171,7 @@
         <ion-row justify-content-center style="text-align:center">
             <div padding>
                 <button ion-button (click)="navigateToCharities()">See Charities</button>
-                <button ion-button (click)="navigateToHome()">Log Out</button>
             <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
-            <button ion-button (click)="navigateToPortfolio()">My Portfolio</button>
         </div></ion-row>
     </ion-grid>
 

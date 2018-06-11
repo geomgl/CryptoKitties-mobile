@@ -5,6 +5,7 @@ import { CharitiesPage } from '../charities/charities';
 import { PaymentsPage } from '../payments/payments';
 import { PortfolioPage } from '../portfolio/portfolio';
 import Chart from 'chart.js';
+import { Cryptoanimal } from '../../models/cryptoanimal';
 
 @IonicPage()
 @Component({
@@ -24,19 +25,86 @@ export class ProfilePage {
   username: string;
   password: string;
 
-// portfolio = ProfilePage;
-// charities = CharitiesPage;
+  public cryptoanimals: Array<Cryptoanimal> = [];
+
+  grid: Array<Array<Cryptoanimal>>; //array of arrays of cryptoanimals
 
  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.icons = "logo-octocat";
+
+    var cryptoanimal1 = new Cryptoanimal();
+    cryptoanimal1.id = 1;
+    cryptoanimal1.name = "Cryptotoucan";
+    cryptoanimal1.image = "../../assets/imgs/cryptotoucan.gif";
+
+
+    var cryptoanimal2 = new Cryptoanimal();
+    cryptoanimal2.id = 2;
+    cryptoanimal2.name = "Cryptofrog";
+    cryptoanimal2.image = "../../assets/imgs/cryptofrog.gif";
+
+
+    var cryptoanimal3 = new Cryptoanimal();
+    cryptoanimal3.id = 3;
+    cryptoanimal3.name = "Cryptocougar";
+    cryptoanimal3.image = "../../assets/imgs/cryptocougar.gif";
+
+    var cryptoanimal4 = new Cryptoanimal();
+    cryptoanimal4.id = 4;
+    cryptoanimal4.name = "Cryptohippo";
+    cryptoanimal4.image = "../../assets/imgs/cryptohippo.gif";
+
+
+    var cryptoanimal5 = new Cryptoanimal();
+    cryptoanimal5.id = 5;
+    cryptoanimal5.name = "Cryptoferret";
+    cryptoanimal5.image = "../../assets/imgs/cryptoferret.gif";
+
+
+    var cryptoanimal6 = new Cryptoanimal();
+    cryptoanimal6.id = 6;
+    cryptoanimal6.name = "Cryptopenguin";
+    cryptoanimal6.image = "../../assets/imgs/cryptopenguin.gif";
+
+    
+    var cryptoanimal7 = new Cryptoanimal();
+    cryptoanimal7.id = 7;
+    cryptoanimal7.name = "Cryptobug";
+    cryptoanimal7.image = "../../assets/imgs/cryptobug.gif";
+
+
+    var cryptoanimal8 = new Cryptoanimal();
+    cryptoanimal8.id = 8;
+    cryptoanimal8.name = "Cryptokoala";
+    cryptoanimal8.image = "../../assets/imgs/cryptokoala.gif";
+    
+
+    this.cryptoanimals.push(cryptoanimal1);
+    this.cryptoanimals.push(cryptoanimal2);
+    this.cryptoanimals.push(cryptoanimal3);
+    this.cryptoanimals.push(cryptoanimal4);
+    this.cryptoanimals.push(cryptoanimal5);
+    this.cryptoanimals.push(cryptoanimal6);
+    this.cryptoanimals.push(cryptoanimal7);
+    this.cryptoanimals.push(cryptoanimal8);
+
+    this.grid = Array(Math.ceil(this.cryptoanimals.length/4)); //MATHS!
+
+    const num_cols = 4;
+
+    for (let i = 0; i < this.cryptoanimals.length; i += num_cols) {
+      //console.log('making row')
+      //console.log("starting at index" + i);
+      this.grid[Math.floor(i / num_cols)] = this.cryptoanimals.slice(i, i + num_cols);
+    }
+
   }
 
   ionViewDidLoad() {
     this.firstName = this.navParams.get("firstName");
     this.lastName = this.navParams.get("lastName");
     this.email = this.navParams.get("email");
-    this.username = this.navParams.get("username");
     this.password = this.navParams.get("password");
 
 

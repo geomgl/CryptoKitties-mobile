@@ -4,8 +4,8 @@
             <ion-title>
                 <div class="pageName">Registration</div>
                 
-                <div class="title" style="float:center;">
-                    <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
+                <div class="title1">
+                    <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" width="40px" height="40px"/>
                     <div style="color:black" (click)="navigateToHome()">CryptoSafari</div>
                 </div>
             </ion-title>
@@ -26,6 +26,8 @@
 
 <ion-content padding>
 
+        <br>
+        <h1 class="header">Welcome to CryptoSafari</h1>
     <p>
     </p>
 
@@ -40,16 +42,11 @@
             <ion-label >Last name</ion-label>
             <ion-input type="text" [(ngModel)]="lastName"></ion-input>
         </ion-item>
-        
+
         <ion-item>
                 <ion-label>Email</ion-label>
                 <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
-                    
-        <ion-item>
-                <ion-label>Username</ion-label>
-                <ion-input type="text" [(ngModel)]="username"></ion-input>
-            </ion-item>
             
             <ion-item>
                 <ion-label>Password</ion-label>

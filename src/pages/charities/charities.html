@@ -26,7 +26,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
         <ion-segment [(ngModel)]="icons" color="primary">
                 <ion-segment-button value="logo-octocat" (ionSelect)="navigateToProfile()">
                         <ion-icon name="logo-octocat"></ion-icon>
@@ -63,13 +63,21 @@
                     </ion-col>
                 </ion-row>
     <ion-row><br></ion-row>
-    <ion-row><br></ion-row>
+    <ion-row justify-content-center>
+            <ion-col>
+            <div class="cryptoAnimalText"> My Charities</div>
+            <div class="block_1 hline-bottom"></div></ion-col>
+            
+     </ion-row>
+     <ion-row><br></ion-row>
+     <ion-row><br></ion-row>
     <ion-row *ngFor="let row of grid">
-        <ion-col *ngFor="let charity of row">
+        <ion-col class="col-border" *ngFor="let charity of row">
                 <ion-avatar item-start>
-                    <ion-icon  name={{charity.button}} (click)="navigateToCharityProfile(charity)" ></ion-icon>
+                        <ion-img class="charitypic"  src={{charity.logo}} (click)="navigateToCharityProfile(charity)"></ion-img>
+                    <!-- <ion-icon  name={{charity.button}} (click)="navigateToCharityProfile(charity)" ></ion-icon> -->
                 </ion-avatar>
-                <h2  (click)="navigateToCharityProfile(charity)" >{{charity.name}}</h2>
+                <h2 class="charityname" (click)="navigateToCharityProfile(charity)" >{{charity.name}}</h2>
                 <p  (click)="navigateToCharityProfile(charity)" >{{charity.mission}}</p>
         </ion-col>
     </ion-row>
@@ -94,11 +102,7 @@
     </ion-item>
 </ion-list>
 </ion-row> -->
-<ion-row><br></ion-row>
-<ion-row><br></ion-row>
-<ion-row justify-content-center>
-<button ion-button (click)="navigateToHome()">Home</button>
-</ion-row>
+
 </ion-grid>
 
 </ion-content>

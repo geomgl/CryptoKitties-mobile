@@ -14,21 +14,12 @@ page-profile {
     align-items: center;
 }
 
-.profilepic {
-    margin: auto;
-    height: 200px; 
-    width: 200px; 
-  // border: 2px solid #fff;
-   border-radius: 50%;
-   box-shadow: 0 0 5px gray;
-   display: block;
-}
-
 .cryptoanimal {
     margin: auto;
-    height: 200px; 
-    width: 200px; 
+    height: 160px; 
+    width: 160px; 
     background: white;
+    margin-top: 10px;
   // border: 2px solid #fff;
 //    display: block;
 }
@@ -58,13 +49,9 @@ page-profile {
 //    display: block;
 }
 
-.stats {
-    text-emphasis: bold;
-    font-size: 30px;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    color: map-get($colors, primary);
+.tabs {
+    padding-top: 3px;
+
 }
 
 .profileText {
@@ -75,19 +62,10 @@ page-profile {
     align-items: center;
 }
 
-.cryptoAnimalText {
-    text-emphasis: bold;
-    font-size: 40px;
-    color: map-get($colors, primary);
-
+.statText {
+    font-size: 20px;
 }
 
-.hline-bottom {
-    padding-bottom: 10px;
-    border-bottom: 2px solid map-get($colors, primary); 
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 }

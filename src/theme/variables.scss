@@ -46,11 +46,11 @@ $navbar-ios-title-text-align: center;
 $navbar-md-title-text-align: center;
 
 $toolbar-background: white;
-$toolbar-title-text-color: #FD5418;
-$toolbar-ios-title-text-color:#FD5418;
-$toolbar-ios-button-color: #FD5418;
-$toolbar-md-title-text-color: #FD5418;
-$toolbar-md-button-color: #FD5418;
+$toolbar-title-text-color: map-get($colors, primary);
+$toolbar-ios-title-text-colorm: map-get($colors, primary);
+$toolbar-ios-button-color: map-get($colors, primary);
+$toolbar-md-title-text-color: map-get($colors, primary);
+$toolbar-md-button-color: map-get($colors, primary);
 
 // App iOS Variables
 // --------------------------------------------------

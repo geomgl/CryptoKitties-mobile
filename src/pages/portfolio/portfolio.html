@@ -13,7 +13,7 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            <div style="float:left; display:flex; align-self: center;"align-title:center>Donations</div>
+            <div style="float:left; display:flex; align-self: center;"align-text:center>Donations</div>
             
             <div class="title" style="float:center;">
                 <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()"float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
@@ -31,7 +31,7 @@
 </ion-header>
 
 
-<ion-content padding ng-app="app">
+<ion-content ng-app="app">
     <ion-segment [(ngModel)]="icons" color="primary">
         <ion-segment-button value="logo-octocat" (ionSelect)="navigateToProfile()">
                 <ion-icon name="logo-octocat"></ion-icon>

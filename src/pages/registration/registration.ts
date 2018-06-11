@@ -12,7 +12,6 @@ export class RegistrationPage {
 
   public firstName: string;
   public lastName: string;
-  public username: string;
   public email: string;
   public password: string;
 
@@ -26,7 +25,6 @@ export class RegistrationPage {
     this.navCtrl.push(ProfilePage, {
       firstName: this.firstName,
       lastName:  this.lastName,
-      username:  this.username,
       email:  this.email,
       password:  this.password,
     })
