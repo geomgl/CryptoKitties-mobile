@@ -45,6 +45,7 @@ export class PortfolioPage {
         let newCharity = new MyCharity();
         newCharity.id = this.charity.id;
         newCharity.name = this.charity.name;
+        newCharity.percentage = 0;
   
         this.user.myCharities.push(newCharity);
   
@@ -60,7 +61,7 @@ export class PortfolioPage {
     }
   
   
-    @ViewChild('doughnutChart') doughnutChart;
+    @ViewChild('doughnutCanvas') doughnutChart;
   
     public doughnutChartEl: any;
     public chartLabels: any = [];

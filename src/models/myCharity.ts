@@ -1,6 +1,6 @@
 
 export class MyCharity {
-    id: number;
-    name: string;
-    percentage: number;
+    id: number = 0;
+    name: string = "";
+    percentage: number = 0;
 }
