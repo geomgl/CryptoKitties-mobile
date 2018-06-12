@@ -1,25 +1,21 @@
 page-charities {
 
-    .title {
-        // text-align: left;
-        // align-content: center;
-        text-emphasis: bold;
-        display: flex;
-        justify-content:center;
-        align-items: center;
-    }
 
+.charityname {
+    text-emphasis: bold;
+    font-size: 20px;
+}
 
 .charitypic {
-        margin: auto;
-        height: 80px; 
-        width: 80px; 
-      // border: 2px solid #fff;
-    //    border-radius: 50%;
-    //    box-shadow: 0 0 5px gray;
-       display: block;
-       border: 1px  gray;
-       background: white;
+    margin: auto;
+    height: 80px; 
+    width: 80px; 
+    // border: 2px solid #fff;
+//    border-radius: 50%;
+//    box-shadow: 0 0 5px gray;
+    display: block;
+    border: 1px  gray;
+    background: white;
 //    display: block;
     }
 
@@ -37,11 +33,13 @@ page-charities {
 
 }
 
-.charityname {
+.title {
+    // text-align: left;
+    // align-content: center;
     text-emphasis: bold;
-    font-size: 20px;
-
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
-
 
 }

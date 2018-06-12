@@ -14,6 +14,7 @@ import { CharityProfilePage } from '../pages/charity_profile/charity_profile';
 import { PaymentsPage } from '../pages/payments/payments';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { BacksplashPage } from '../pages/backsplash/backsplash';
+import {HttpModule} from '@angular/http';
 
 @NgModule({ 
   declarations: [
@@ -29,6 +30,7 @@ import { BacksplashPage } from '../pages/backsplash/backsplash';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

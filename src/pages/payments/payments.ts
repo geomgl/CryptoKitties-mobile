@@ -4,6 +4,8 @@ import { PortfolioPage } from '../portfolio/portfolio';
 import { ProfilePage } from '../profile/profile';
 import { Creditcard } from '../../models/creditcard';
 import { Charity } from '../../models/charity';
+import { User } from '../../models/user';
+import { Donation } from '../../models/donation';
 
 /**
  * Generated class for the PaymentsPage page.
@@ -19,25 +21,31 @@ import { Charity } from '../../models/charity';
 })
 export class PaymentsPage {
 
-  public charity: Charity;
+  public user: User = new User();
+  public charity: Charity = new Charity();
+  public amount: number;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-
-  this.charity = this.navParams.get("charity");
+    this.user = this.navParams.get("user");
+    this.charity = this.navParams.get("charity");
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentsPage');
   }
-  navigateToPortfolio() {
-    this.navCtrl.push(PortfolioPage);
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage);
 
   }
 
-  navigateToProfile() {
-    this.navCtrl.push(ProfilePage);
+  navigateToPortfolio() {
+    this.navCtrl.push(PortfolioPage, {
+      user: this.user,
+      charity: this.charity,
+      amount: this.amount,
+    });
 
   }
 

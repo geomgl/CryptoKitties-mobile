@@ -30,15 +30,16 @@ page-charity_profile {
 
     .certpic {
         margin: auto;
-        height: 170px; 
+        height: 150px; 
         width: 250px; 
         // border: 2px solid #fff;
         //    border-radius: 50%;
         //    box-shadow: 0 0 5px gray;
-        display: block;
+        display: flex;
         border: 1px solid lightgray;
         background-color: white;
         padding-bottom: 0px;
+        align-items: center;
         //    display: block;
     }
 
@@ -94,11 +95,11 @@ page-charity_profile {
         // border: 2px solid #fff;
         //    border-radius: 50%;
         //    box-shadow: 0 0 5px gray;
-        display: block;
+        display: flex;
+        align-items: center;
         border: 1px solid lightgray;
         background-color: white;
         padding-bottom: 0px;
-        align-items: center;
         //    display: block;
     }
 

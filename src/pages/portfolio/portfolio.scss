@@ -1,29 +1,20 @@
 page-portfolio {
 
-    .ios, .md {
- 
-        page-home {
-     
-            .scroll-content {
-                background-color: map-get($colors, light);
-            }
-     
-            ion-card-header {
-                font-weight: bold;
-            }
-     
+.ios, .md {
+
+    page-home {
+
+        .scroll-content {
+            background-color: map-get($colors, light);
         }
+
+        ion-card-header {
+            font-weight: bold;
+        }
+
+    }
      
-    }
-    .title {
-        // text-align: left;
-        // align-content: center;
-        text-emphasis: bold;
-        display: flex;
-        justify-content:center;
-        align-items: center;
-    }
-    
+}
 
 .profileText {
     text-emphasis: bold;
@@ -33,6 +24,13 @@ page-portfolio {
     align-items: center;
 }
 
-
+.title {
+    // text-align: left;
+    // align-content: center;
+    text-emphasis: bold;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
 
 }

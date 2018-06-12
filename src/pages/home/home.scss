@@ -1,5 +1,11 @@
 page-home {
     
+.background1 {
+    background: white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+}
 
 .title {
     // text-align: left;
@@ -10,13 +16,6 @@ page-home {
     align-items: center;
 }
 
-
-.background1 {
-     background: white;
-     background-size: cover;
-     background-position: center;
-     background-attachment: scroll;
- }
 
 // .background2 {
 //     background: url("../../assets/imgs/backsplash.png") no-repeat;

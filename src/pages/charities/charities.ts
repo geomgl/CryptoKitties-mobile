@@ -5,6 +5,8 @@ import { CharityProfilePage } from '../charity_profile/charity_profile';
 import { Charity } from '../../models/charity';
 import { PortfolioPage } from '../portfolio/portfolio';
 import { ProfilePage } from '../profile/profile';
+import { User } from '../../models/user';
+import { Donation } from '../../models/donation';
 
 /**
  * Generated class for the CharitiesPage page.
@@ -22,7 +24,11 @@ export class CharitiesPage {
 
   icons: string;
   public charities: Array<Charity> = [];
-
+  public user: User = new User();
+  public charity: Charity = new Charity();
+  public amount: number;
+  public donation: Donation = new Donation();
+  
   grid: Array<Array<Charity>>; //array of arrays of charities
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -146,23 +152,30 @@ export class CharitiesPage {
   
 
   navigateToHome() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage, {
+      user: this.user
+  });
 
   }
 
   navigateToPortfolio() {
-    this.navCtrl.push(PortfolioPage);
+    this.navCtrl.push(PortfolioPage, {
+      user: this.user,
+      charity: this.charity,
+      amount: this.amount,
+    });
 
   }
-
   navigateToProfile() {
-    this.navCtrl.push(ProfilePage);
-
+    this.navCtrl.push(ProfilePage, {
+      user: this.user
+  });
   }
 
   navigateToCharityProfile(charity: Charity) {
     this.navCtrl.push(CharityProfilePage, {
-        charity: charity
+        charity: charity,
+        user: this.user
     }
   );
 

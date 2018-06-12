@@ -16,7 +16,7 @@ export class HomePage {
   public password: string;
 
   constructor(public navCtrl: NavController) {
-    this.username = "John";
+    this.username = "";
   }
   
   navigateToLogin() {

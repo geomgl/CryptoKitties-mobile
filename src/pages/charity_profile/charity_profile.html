@@ -34,7 +34,7 @@
 style="background-color:grey; font:roboto; color:white"
 <ion-content  padding class="my-background">
         <ion-grid>
-                <ion-row class="charityHead" (click)="navigateToPayments()"><div>Charities / </div><div class="charityHeadName"> {{charity.name}}</div></ion-row>
+                <ion-row class="charityHead" (click)="navigateToCharities()"><div>Charities / </div><div class="charityHeadName"> {{charity.name}}</div></ion-row>
                 <ion-row><br></ion-row>
                 <ion-row justify-content-center>
                                 <!-- align="left" -->
@@ -64,7 +64,7 @@ style="background-color:grey; font:roboto; color:white"
                     <ion-col><br></ion-col>
                 </ion-row>
                 <ion-row align-self-center justify-content-left>
-                    <ion-col class="paymentButton"><button ion-button (click)="navigateToPayments()">+ Add to Portfolio</button></ion-col>
+                    <ion-col class="paymentButton"><button ion-button (click)="navigateToPayments(charity)">+ Add to Portfolio</button></ion-col>
                     <ion-col col-19  align="left" justify-content-left class="charityDesc">{{charity.description}}</ion-col>
                     <ion-col><br></ion-col>
                     <ion-col><br></ion-col>

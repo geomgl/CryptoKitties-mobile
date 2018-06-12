@@ -27,7 +27,7 @@
 
 
 <ion-content padding>
-<h3>Helping the Animals</h3>
+<h3>{{charity.name}}</h3>
 
 Your donations will help preserve animals and cryptoanimals
 <ion-item>
@@ -41,31 +41,34 @@ Your donations will help preserve animals and cryptoanimals
 
 
     <ion-list>
-
+        <ion-item>
+            <ion-label>Amount</ion-label>
+            <ion-input type="number" placeholder="$100" [(ngModel)]="amount"></ion-input>
+          </ion-item>
         <ion-item>
           <ion-label>Full Name</ion-label>
-          <ion-input type="text" [(ngModel)]="username"></ion-input>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
         </ion-item>
       
         <ion-item>
           <ion-label>Credit Card Number</ion-label>
-          <ion-input type="text" [(ngModel)]="password"></ion-input>
+          <ion-input type="text"></ion-input>
         </ion-item>
 
           <ion-item>
               <ion-label>Expiration Date</ion-label>
-              <ion-datetime displayFormat="YYYY/MM" placeholder="YYYY/MM"[(ngModel)]="password"></ion-datetime>
+              <ion-datetime displayFormat="YYYY/MM" placeholder="YYYY/MM"></ion-datetime>
             </ion-item>
 
         <ion-item>
             <ion-label>CVV</ion-label>
-            <ion-input type="text" [(ngModel)]="password"></ion-input>
+            <ion-input type="text"></ion-input>
           </ion-item>
       
       </ion-list>
       
       <div padding>
-        <button ion-button block (click)="navigateToProfile()">Save</button>
+        <button ion-button block (click)="navigateToPortfolio()">Help the Animals</button>
       </div>
 
 </ion-content>

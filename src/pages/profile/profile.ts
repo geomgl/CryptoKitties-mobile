@@ -6,6 +6,9 @@ import { PaymentsPage } from '../payments/payments';
 import { PortfolioPage } from '../portfolio/portfolio';
 import Chart from 'chart.js';
 import { Cryptoanimal } from '../../models/cryptoanimal';
+import { Charity } from '../../models/charity';
+import { User } from '../../models/user';
+import { Donation } from '../../models/donation';
 
 @IonicPage()
 @Component({
@@ -24,6 +27,12 @@ export class ProfilePage {
   email: string;
   username: string;
   password: string;
+
+  public charities: Array<Charity> = [];
+  public user: User = new User();
+  public charity: Charity = new Charity();
+  public amount: number;
+  public donation: Donation = new Donation();
 
   public cryptoanimals: Array<Cryptoanimal> = [];
 
@@ -139,21 +148,41 @@ export class ProfilePage {
   }
   
   navigateToHome() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage, {
+      user: this.user,
+      charity: this.charity
+  });
+}
 
-  }
   navigateToCharities() {
-    this.navCtrl.push(CharitiesPage);
+    this.navCtrl.push(CharitiesPage, {
+      user: this.user,
+      charity: this.charity
+  });
+}
+
+
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage, {
+      user: this.user,
+      charity: this.charity
+  });
 
   }
 
   navigateToPayments() {
-    this.navCtrl.push(PaymentsPage);
-
-  }
+    this.navCtrl.push(PaymentsPage, {
+      user: this.user,
+      charity: this.charity
+  });
+}
 
   navigateToPortfolio() {
-    this.navCtrl.push(PortfolioPage);
+    this.navCtrl.push(PortfolioPage, {
+      user: this.user,
+      charity: this.charity,
+      amount: this.amount,
+    });
 
   }
   

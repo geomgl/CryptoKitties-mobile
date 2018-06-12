@@ -6,6 +6,7 @@ import { PaymentsPage } from '../payments/payments';
 import { Certification } from '../../models/certifications';
 import { Project } from '../../models/project';
 import { HomePage } from '../home/home';
+import { User } from '../../models/user';
 
 /**
  * Generated class for the ApplePage page.
@@ -22,7 +23,7 @@ import { HomePage } from '../home/home';
 export class CharityProfilePage {
 
   public charity: Charity;
-
+  public user: User = new User();
   public certifications: Array<Certification> = [];
   public projects: Array<Project> = [];
 
@@ -38,7 +39,7 @@ export class CharityProfilePage {
   var certification1 = new Certification();
   certification1.id = 1;
   certification1.name = "Global Charity Recognition";
-  certification1.description = "Provided to Africa's top charity each year.";
+  certification1.description = "Provided to Africa's top charity each year";
   certification1.image = "../../assets/imgs/certifications/rainforest.png";
   certification1.year = "2017";
 
@@ -46,7 +47,7 @@ export class CharityProfilePage {
   var certification2 = new Certification();
   certification2.id = 2;
   certification2.name = "Africa's Best Crypto Charity";
-  certification2.description = "Given for excellence in crypto charity work.";
+  certification2.description = "Given for excellence in crypto charity work";
   certification2.image = "../../assets/imgs/certifications/iso.png";
   certification2.year = "2012";
 
@@ -54,7 +55,7 @@ export class CharityProfilePage {
   var certification3 = new Certification();
   certification3.id = 3;
   certification3.name = "Top 100 Charities for Coders";
-  certification3.description = "Recognition for charities that have excellence development environments.";
+  certification3.description = "Recognition for charities that have excellent development environments";
   certification3.image = "../../assets/imgs/certifications/truecharity.png";
   certification3.year = "2017";
 
@@ -112,21 +113,25 @@ export class CharityProfilePage {
   }
 
   navigateToCharities() {
-    this.navCtrl.push(CharitiesPage);
+    this.navCtrl.push(CharitiesPage, {
+      user: this.user
+  });
 
   }
 
   navigateToPayments(charity: Charity) {
     this.navCtrl.push(PaymentsPage, {
-        charity: charity
+        charity: charity,
+        user: this.user
 
     });
   }
 
   navigateToHome() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage, {
+      user: this.user
+
+  });
 
   }
-
-
 }
