@@ -5,6 +5,7 @@ import { RegistrationPage } from '../registration/registration';
 import { ProfilePage } from '../profile/profile';
 import { CharitiesPage } from '../charities/charities';
 import { PortfolioPage } from '../portfolio/portfolio';
+import { PaymentsPage } from '../payments/payments';
 
 @Component({
   selector: 'page-home',

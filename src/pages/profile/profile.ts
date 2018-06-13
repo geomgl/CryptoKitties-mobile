@@ -111,10 +111,10 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
-    this.firstName = this.navParams.get("firstName");
-    this.lastName = this.navParams.get("lastName");
-    this.email = this.navParams.get("email");
-    this.password = this.navParams.get("password");
+    // this.firstName = this.navParams.get("firstName");
+    // this.lastName = this.navParams.get("lastName");
+    // this.email = this.navParams.get("email");
+    // this.password = this.navParams.get("password");
 
     //this.token = localStorage.getItem("TOKEN");
     //console.log(profile token: ", this.token);
