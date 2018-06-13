@@ -15,6 +15,7 @@ import { PaymentsPage } from '../pages/payments/payments';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { BacksplashPage } from '../pages/backsplash/backsplash';
 import {HttpModule} from '@angular/http';
+import { AuthService } from '../auth.service';
 
 @NgModule({ 
   declarations: [
@@ -48,6 +49,7 @@ import {HttpModule} from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

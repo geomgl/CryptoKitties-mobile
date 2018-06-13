@@ -24,6 +24,7 @@ export class PaymentsPage {
   public user: User = new User();
   public charity: Charity = new Charity();
   public amount: number;
+  public count: number;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -45,6 +46,7 @@ export class PaymentsPage {
       user: this.user,
       charity: this.charity,
       amount: this.amount,
+      count: 1,
     });
 
   }
