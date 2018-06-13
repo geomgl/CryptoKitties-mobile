@@ -1,22 +1,49 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, MenuController, NavParams } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Nav } from 'ionic-angular';
 
 import { HomePage } from '../pages/home/home';
+import { ProfilePage } from '../pages/profile/profile';
+import { PaymentsPage } from '../pages/payments/payments';
+import { CharitiesPage } from '../pages/charities/charities';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = HomePage;
+  @ViewChild(Nav) nav: Nav;
+
+  // firstName: string;
+  // lastName: string;
+  // email: string;
+  // username: string;
+  // password: string;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+    //menu.enable(true);
+    
       statusBar.styleDefault();
       splashScreen.hide();
+    
     });
+  }
+
+  openPage(page) {
+    switch (page) {
+      case "ProfilePage":
+        this.nav.push(ProfilePage);
+        return;
+      case "PaymentsPage":
+        this.nav.push(PaymentsPage);
+        return;
+      case "CharitiesPage":
+        this.nav.push(CharitiesPage);
+        return;
+    }
   }
 }
 
