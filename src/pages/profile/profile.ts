@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ApplicationRef } from '@angular/core';
 import { NavController, NavParams, IonicPage, IonicApp } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CharitiesPage } from '../charities/charities';
@@ -39,7 +39,7 @@ export class ProfilePage {
   grid: Array<Array<Cryptoanimal>>; //array of arrays of cryptoanimals
 
  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private appRef: ApplicationRef) {
     this.icons = "logo-octocat";
 
     var cryptoanimal1 = new Cryptoanimal();
@@ -115,6 +115,16 @@ export class ProfilePage {
     // this.lastName = this.navParams.get("lastName");
     // this.email = this.navParams.get("email");
     // this.password = this.navParams.get("password");
+
+    //this.token = localStorage.getItem("TOKEN");
+    //console.log(profile token: ", this.token);
+    //Comment out getting the navParams email and password
+
+
+    setTimeout(() => {
+      this.appRef.tick();
+    }, 1000);
+    
 
 
   //   this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {

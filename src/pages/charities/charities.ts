@@ -40,7 +40,6 @@ export class CharitiesPage {
     charity1.name = "Giving Back to Africa";
     charity1.mission = "Give back to Africa. Help bring the rains.";
     charity1.description = "Help bring the rains back to Africa. We'll use our funding to call Toto.";
-    charity1.button = "logo-apple";
     charity1.logo = "../../assets/imgs/logos/GivingBackToAfrica.png";
     charity1.location = "Africa";
 
@@ -50,7 +49,6 @@ export class CharitiesPage {
     charity2.name = "GWC";
     charity2.mission = "Global Wildlife Commission - dedicated to saving crypto wildlife in Africa.";
     charity2.description = "We love bitcoin and wildlife, and neither is safe without our help. Help donate to a project to save Africa.";
-    charity2.button = "logo-googleplus";
     charity2.logo = "../../assets/imgs/logos/GWC.png";
     charity2.location = "Africa";
 
@@ -60,7 +58,6 @@ export class CharitiesPage {
     charity3.name = "Helping Rhinos";
     charity3.mission = "We'll help the rhinos find their new home.";
     charity3.description = "Rhino tusks are being taken, and soon they'll end up like the dinosaurs. Help us defeat their predators.";
-    charity3.button = "headset";
     charity3.logo = "../../assets/imgs/logos/HelpingRhinos.png";
     charity3.location = "Africa";
 
@@ -70,7 +67,6 @@ export class CharitiesPage {
     charity4.name = "IUCN";
     charity4.mission = "International Union for Common Noises. Help keep animals loud.";
     charity4.description = "Help us help the animals with everything to do with their voices. They'll learn to sing and to project their calls!";
-    charity4.button = "headset";
     charity4.logo = "../../assets/imgs/logos/iucn-logo.png";
     charity4.location = "Africa";
 
@@ -80,7 +76,6 @@ export class CharitiesPage {
     charity5.name = "Turtle Conservancy";
     charity5.mission = "I've helped save more than a few turtles!";
     charity5.description = "Help save turtles while they're swimming and before they even get into the water.";
-    charity5.button = "headset";
     charity5.logo = "../../assets/imgs/logos/Turtle-Conservancy.png";
     charity5.location = "Africa";
 
@@ -90,7 +85,6 @@ export class CharitiesPage {
     charity6.name = "WCN";
     charity6.mission = "Wild Coin Network - an international coalition to bring ICOs to animals everywhere.";
     charity6.description = "Creating a global currency for animals, one that's decentralized and doesn't rely on central animal banks!";
-    charity6.button = "headset";
     charity6.logo = "../../assets/imgs/logos/WCN.png";
     charity6.location = "Africa";
 
@@ -100,7 +94,6 @@ export class CharitiesPage {
     charity7.name = "WCS";
     charity7.mission = "Wild Coin Sales - help our sales teams around the world sell bitcoin to animals.";
     charity7.description = "The wild coin sales network is dedicated to help sell bitcoin to animals. We plan to ICO with every species.";
-    charity7.button = "headset";
     charity7.logo = "../../assets/imgs/logos/wcs_logo.png";
     charity7.location = "Africa";
     
@@ -109,7 +102,6 @@ export class CharitiesPage {
     charity8.name = "Wildlands";
     charity8.mission = "Wild land reform across Africa and the globe.";
     charity8.description = "We're dedicated to helping reform and revitalize wildlands in Africa and around the world. Help stop deforestation!";
-    charity8.button = "headset";
     charity8.logo = "../../assets/imgs/logos/wildlands.png";
     charity8.location = "Africa";
 

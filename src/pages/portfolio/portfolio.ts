@@ -28,6 +28,7 @@ export class PortfolioPage {
     public charity: Charity = new Charity();
     public technologies: Array<Slice> = [];
     public amount: number = 0;
+    public count: number = 0;
     
     constructor(public navCtrl: NavController,
       public navParams: NavParams) {
@@ -38,10 +39,14 @@ export class PortfolioPage {
       if (this.navParams.get('amount')) {
         this.amount = this.navParams.get('amount');
       }
+
+      if (this.navParams.get('count')) {
+        this.amount = this.navParams.get('count');
+      }
   
       if (this.navParams.get('charity')) {
         this.charity = this.navParams.get('charity');
-  
+
         let newCharity = new MyCharity();
         newCharity.id = this.charity.id;
         newCharity.name = this.charity.name;
@@ -63,7 +68,7 @@ export class PortfolioPage {
   
     @ViewChild('doughnutCanvas') doughnutChart;
   
-    public doughnutChartEl: any;
+    public doughnutChartel: any;
     public chartLabels: any = [];
     public chartValues: any = [];
     public chartColours: any = [];

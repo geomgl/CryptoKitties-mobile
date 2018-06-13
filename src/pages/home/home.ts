@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegistrationPage } from '../registration/registration';
 import { ProfilePage } from '../profile/profile';
@@ -16,12 +16,20 @@ export class HomePage {
   public username: string;
   public password: string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private app: App) {
     this.username = "";
-  }
+
+       if (localStorage.getItem("TOKEN")) {
+       this.app.getRootNav().setRoot(ProfilePage);
+        }
+}
   
   navigateToLogin() {
     this.navCtrl.push(LoginPage);
+
+    this.app.getRootNav().setRoot(LoginPage);
+
+    
 
   }
 
