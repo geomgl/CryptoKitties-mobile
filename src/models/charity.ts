@@ -1,9 +1,9 @@
 
 export class Charity {
-    id: number;
+    charity_id: number;
     name: string;
     mission: string;
     description: string;
-    logo: string;
+    img: string;
     location: string;
 }
