@@ -16,6 +16,7 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { BacksplashPage } from '../pages/backsplash/backsplash';
 import {HttpModule} from '@angular/http';
 import { AuthService } from '../auth.service';
+import { CryptoanimalPage } from '../pages/cryptoanimal/cryptoanimal';
 
 @NgModule({ 
   declarations: [
@@ -27,7 +28,8 @@ import { AuthService } from '../auth.service';
     CharitiesPage,
     CharityProfilePage,
     PaymentsPage,
-    PortfolioPage
+    PortfolioPage,
+    CryptoanimalPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { AuthService } from '../auth.service';
     CharitiesPage,
     CharityProfilePage,
     PaymentsPage,
-    PortfolioPage
+    PortfolioPage,
+    CryptoanimalPage
   ],
   providers: [
     StatusBar,

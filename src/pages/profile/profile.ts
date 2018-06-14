@@ -9,6 +9,7 @@ import { Cryptoanimal } from '../../models/cryptoanimal';
 import { Charity } from '../../models/charity';
 import { User } from '../../models/user';
 import { Donation } from '../../models/donation';
+import { CryptoanimalPage } from '../cryptoanimal/cryptoanimal';
 
 @IonicPage()
 @Component({
@@ -43,50 +44,50 @@ export class ProfilePage {
     this.icons = "logo-octocat";
 
     var cryptoanimal1 = new Cryptoanimal();
-    cryptoanimal1.id = 1;
-    cryptoanimal1.name = "Cryptotoucan";
-    cryptoanimal1.image = "../../assets/imgs/cryptotoucan.gif";
-
+    cryptoanimal1.animal_id = 1;
+    cryptoanimal1.name = "Crypto Toucan";
+    cryptoanimal1.img = "../../assets/imgs/cryptotoucan.gif";
+    cryptoanimal1.description = "This is a toucan";
 
     var cryptoanimal2 = new Cryptoanimal();
-    cryptoanimal2.id = 2;
-    cryptoanimal2.name = "Cryptofrog";
-    cryptoanimal2.image = "../../assets/imgs/cryptofrog.gif";
+    cryptoanimal2.animal_id = 2;
+    cryptoanimal2.name = "Crypto Frog";
+    cryptoanimal2.img = "../../assets/imgs/cryptofrog.gif";
 
 
     var cryptoanimal3 = new Cryptoanimal();
-    cryptoanimal3.id = 3;
-    cryptoanimal3.name = "Cryptocougar";
-    cryptoanimal3.image = "../../assets/imgs/cryptocougar.gif";
+    cryptoanimal3.animal_id = 3;
+    cryptoanimal3.name = "Crypto Cougar";
+    cryptoanimal3.img = "../../assets/imgs/cryptocougar.gif";
 
     var cryptoanimal4 = new Cryptoanimal();
-    cryptoanimal4.id = 4;
-    cryptoanimal4.name = "Cryptohippo";
-    cryptoanimal4.image = "../../assets/imgs/cryptohippo.gif";
+    cryptoanimal4.animal_id = 4;
+    cryptoanimal4.name = "Crypto Hippo";
+    cryptoanimal4.img = "../../assets/imgs/cryptohippo.gif";
 
 
     var cryptoanimal5 = new Cryptoanimal();
-    cryptoanimal5.id = 5;
-    cryptoanimal5.name = "Cryptoferret";
-    cryptoanimal5.image = "../../assets/imgs/cryptoferret.gif";
+    cryptoanimal5.animal_id = 5;
+    cryptoanimal5.name = "Crypto Ferret";
+    cryptoanimal5.img = "../../assets/imgs/cryptoferret.gif";
 
 
     var cryptoanimal6 = new Cryptoanimal();
-    cryptoanimal6.id = 6;
-    cryptoanimal6.name = "Cryptopenguin";
-    cryptoanimal6.image = "../../assets/imgs/cryptopenguin.gif";
+    cryptoanimal6.animal_id = 6;
+    cryptoanimal6.name = "Crypto Penguin";
+    cryptoanimal6.img = "../../assets/imgs/cryptopenguin.gif";
 
     
     var cryptoanimal7 = new Cryptoanimal();
-    cryptoanimal7.id = 7;
-    cryptoanimal7.name = "Cryptobug";
-    cryptoanimal7.image = "../../assets/imgs/cryptobug.gif";
+    cryptoanimal7.animal_id = 7;
+    cryptoanimal7.name = "Crypto Bug";
+    cryptoanimal7.img = "../../assets/imgs/cryptobug.gif";
 
 
     var cryptoanimal8 = new Cryptoanimal();
-    cryptoanimal8.id = 8;
-    cryptoanimal8.name = "Cryptokoala";
-    cryptoanimal8.image = "../../assets/imgs/cryptokoala.gif";
+    cryptoanimal8.animal_id = 8;
+    cryptoanimal8.name = "Crypto Koala";
+    cryptoanimal8.img = "../../assets/imgs/cryptokoala.gif";
     
 
     this.cryptoanimals.push(cryptoanimal1);
@@ -195,6 +196,17 @@ export class ProfilePage {
     });
 
   }
+
+  navigateToCryptoanimal(cryptoanimal: Cryptoanimal) {
+    this.navCtrl.push(CryptoanimalPage, {
+        user: this.user,
+        cryptoanimal: cryptoanimal
+
+    }
+  );
+
+  }
+
   
 }
    
