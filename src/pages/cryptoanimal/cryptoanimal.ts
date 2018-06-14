@@ -23,6 +23,7 @@ export class CryptoanimalPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.cryptoanimal = this.navParams.get("cryptoanimal");
+    console.log(this.cryptoanimal);
   }
 
 

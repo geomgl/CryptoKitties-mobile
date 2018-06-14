@@ -50,7 +50,7 @@
             </ion-col>
             <ion-col align-self-center justify-content-end>
                 <h4 class="stats">$2,500</h4><br>
-                <div>Raised for Conservation </div>
+                <div>Raised for Conservation</div>
             </ion-col>
             <ion-col align-self-center justify-content-end>
                 <h4 class="stats">7</h4><br>
@@ -65,7 +65,8 @@
        <ion-row justify-content-center>
            <ion-col>
            <div class="cryptoAnimalText"> My Nature Reserve</div>
-           <div class="block_1 hline-bottom"></div></ion-col>
+           <div style="color: white" class="block_1 hline-bottom"> </div>
+        </ion-col>
     </ion-row>
     <ion-row justify-content-center *ngFor="let row of grid">
             <ion-col justify-content-center *ngFor="let cryptoanimal of row">
@@ -124,8 +125,6 @@
             <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
         </div></ion-row>
     </ion-grid>
-
-    
 
 </div>
 

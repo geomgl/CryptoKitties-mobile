@@ -16,9 +16,53 @@ page-cryptoanimal {
 //    display: block;
     }
 
-.desc {
+p {
+    text-emphasis: bold;
+    font-size: 25px;
+    color: white;
+    align-items: left;
+}
 
+.info {
+    padding: 5px;
 
+}
+
+.orangeback {
+    background-color: map-get($colors, primary);
+    padding: 30px;
+}
+
+.whiteback {
+    background-color: white;
+    padding: 30px;
+}
+
+.whitetext {
+    color: map-get($colors, primary);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 17px;
+}
+
+.grid {
+    padding: 30px;
+}
+
+.whitehead {
+    color: map-get($colors, primary);
+    text-emphasis: bold;
+    font-size: 25px;
+    align-items: left;
+}
+
+.text {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 17px;
+    color: white;
     }
 
 }

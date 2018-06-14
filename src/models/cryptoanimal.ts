@@ -5,4 +5,9 @@ export class Cryptoanimal {
     img: string;
     criteria: string;
     description:  string;
+    price: number;
+    status: string;
+    habitat: string;
+    
+
 }

@@ -29,7 +29,6 @@
 
 <ion-content>
 
-
 <ion-grid>
   <ion-row>
     <ion-col>
@@ -38,6 +37,7 @@
 
 </ion-col>
   </ion-row>
+
 <ion-row><br></ion-row>
   <ion-row>
     <ion-col>
@@ -47,16 +47,37 @@
      
   </div>
 </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-        <div class="desc">
-        {{cryptoanimal.description}}
-    </div>
-    </ion-col>
-
-  </ion-row>
-
+</ion-row>
 </ion-grid>
 
+
+<ion-grid padding class= "grid">
+  <ion-row justify-content-center responsive-sm class="orangeback">
+       <ion-col width-10>
+
+            <div><p class="head">Price ($USD)</p></div>
+            <div class="text">{{cryptoanimal.price}}</div>
+           
+        </ion-col>
+    </ion-row>     
+<ion-row class="whiteback">
+         <ion-col  >
+                <div> <p class="whitehead">Status</p></div>
+       
+               <div class="whitetext">{{cryptoanimal.status}}</div>
+               <div class="block_1 hline-bottom"> </div>
+               <div><p class="whitehead">Habitat</p></div>
+       
+               <div class="whitetext">{{cryptoanimal.habitat}}</div>
+
+         </ion-col>
+        </ion-row>
+    <ion-row class="orangeback">
+    <ion-col>
+         <div> <p class="head">Description</p></div>
+
+        <div class="text">{{cryptoanimal.description}}</div>
+        </ion-col>
+</ion-row>
+</ion-grid>
 </ion-content>
