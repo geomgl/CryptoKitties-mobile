@@ -1,9 +1,10 @@
 export class Paymentmethod {
     payment_id: number;
     name: string;
-    number: string;
+    user_id: string;
+    card_number: string;
     CVV: string;
     expiration_date: string;
-    type: string;
+    card_type: string;
 
 }
