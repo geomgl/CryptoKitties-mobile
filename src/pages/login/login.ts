@@ -15,59 +15,44 @@ export class LoginPage {
   public email: string;
   public password: string;
 
-  constructor(public navCtrl: NavController, 
-    public navParams: NavParams,
-    public http: Http,
-    public authService:  AuthService
-  ) {}
-      // {   this.http
-      //   .post("http://localhost:3000/login", {
-      //   email: this.email,
-      //   password: this.password
-      //   }) 
-      //   .subscribe (
-      //     Result => {
-      //     console.log(Result);
-      //     },
-      //     Error => {
-      //     console.log(Error);
-      //     }
-      //     );
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public http: Http) { }
 
-          // var responseJson = result.json();
-          // console.log("jwt: ", responseJson.token);
-          
-          //store the token in local storage
-          //localStorage.setItem("TOKEN", response.token) -- token no longer passed via navParams, so need to get it from local storage
-      
-      ionViewDidLoad() {
-        console.log("ionViewDidLoad LoginPage");
-      }
+  alertBox() {
+    alert("Incorrect username and/or password")
+  }
 
-      login() {
-        let callback = (err) => {
-          if (err) {
-            // TODO: display error
-            return;
-          }
-    
-          this.navCtrl.push(ProfilePage);
+  login() {
+    // make call to server and check validity of login credentials 
+    this.http
+      .post("http://localhost:3000/login", {
+        eamil: this.email,
+        password: this.password
+      }).subscribe(
+        result => {
+          // if successful, proceed to profile page and push data
+          console.log('successful login');
+          this.navCtrl.push(ProfilePage, {
+            email: this.email,
+            password: this.password
+          });
+        },
+        error => {
+          console.log("invalid credentials");
+          alert("Incorrect username andor password");
         }
+      );
 
-      AuthService.login(this.email, this.password, callback);
-  
-
-    }
+  }
 
 
   navigateToProfile() {
     this.navCtrl.push(ProfilePage, {
-      email:  this.email,
-      password:  this.password
-      // token: 
+      email: this.email,
+      password: this.password
     })
   }
-  
+
   navigateToHome() {
     this.navCtrl.push(HomePage);
 
@@ -78,4 +63,4 @@ export class LoginPage {
 
 
 }
-   
+
