@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, MenuController, NavController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -15,6 +15,8 @@ import { PaymentsPage } from '../pages/payments/payments';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { BacksplashPage } from '../pages/backsplash/backsplash';
 import {HttpModule} from '@angular/http';
+import { AuthService } from '../auth.service';
+import { CryptoanimalPage } from '../pages/cryptoanimal/cryptoanimal';
 
 @NgModule({ 
   declarations: [
@@ -26,7 +28,8 @@ import {HttpModule} from '@angular/http';
     CharitiesPage,
     CharityProfilePage,
     PaymentsPage,
-    PortfolioPage
+    PortfolioPage,
+    CryptoanimalPage
   ],
   imports: [
     BrowserModule,
@@ -43,11 +46,13 @@ import {HttpModule} from '@angular/http';
     CharitiesPage,
     CharityProfilePage,
     PaymentsPage,
-    PortfolioPage
+    PortfolioPage,
+    CryptoanimalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

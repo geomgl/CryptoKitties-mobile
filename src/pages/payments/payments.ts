@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PortfolioPage } from '../portfolio/portfolio';
 import { ProfilePage } from '../profile/profile';
-import { Creditcard } from '../../models/creditcard';
+import { Paymentmethod } from '../../models/paymentMethod';
 import { Charity } from '../../models/charity';
 import { User } from '../../models/user';
 import { Donation } from '../../models/donation';
@@ -24,6 +24,7 @@ export class PaymentsPage {
   public user: User = new User();
   public charity: Charity = new Charity();
   public amount: number;
+  public count: number;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -45,6 +46,7 @@ export class PaymentsPage {
       user: this.user,
       charity: this.charity,
       amount: this.amount,
+      count: 1,
     });
 
   }

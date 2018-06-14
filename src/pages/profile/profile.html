@@ -14,7 +14,7 @@
                 </ion-title>
                 <ion-buttons end>
           
-                    <button ion-button icon-only (click)="navigateToProfile()">
+                    <button ion-button icon-only menuToggle>
                         <ion-icon name="md-menu"></ion-icon>
                     </button>
                 </ion-buttons>
@@ -25,21 +25,19 @@
         <ion-segment [(ngModel)]="icons" color="primary">
                 <ion-segment-button value="logo-octocat">
                         <ion-icon class="tabs" name="logo-octocat"></ion-icon>
-                      </ion-segment-button>   
+                </ion-segment-button> 
                 <ion-segment-button value="stats" (ionSelect)="navigateToPortfolio()">
                   <ion-icon class="tabs" name="stats"></ion-icon>
                 </ion-segment-button>
-                <ion-segment-button value="charities" (ionSelect)="navigateToCharities()">
+                <ion-segment-button value="charities" (ionSelect)="navigateToCharities()" >         
                   <ion-icon class="tabs" name="ribbon"></ion-icon>
                 </ion-segment-button>
         </ion-segment>
 
               
-    <!-- <div [ngSwitch]="icons">
+<div [ngSwitch]="icons">
 
-
-    <ion-grid *ngSwitchCase="'logo-octocat'"> -->
-        <ion-grid>
+    <ion-grid *ngSwitchCase="'logo-octocat'"> 
         <ion-row><br></ion-row>
         <ion-row justify-content-center>
                         <!-- align="left" -->
@@ -68,63 +66,18 @@
            <ion-col>
            <div class="cryptoAnimalText"> My Nature Reserve</div>
            <div class="block_1 hline-bottom"></div></ion-col>
-           
     </ion-row>
     <ion-row justify-content-center *ngFor="let row of grid">
             <ion-col justify-content-center *ngFor="let cryptoanimal of row">
                     <ion-avatar item-start>
                         <div>
-                            <ion-img class="cryptoanimal"  src={{cryptoanimal.image}}></ion-img>
+                            <ion-img class="cryptoanimal"  src={{cryptoanimal.img}} (click)="navigateToCryptoanimal(cryptoanimal)"></ion-img>
                         </div>
                     </ion-avatar>
             </ion-col>
     </ion-row>
-<!-- 
-        <ion-row justify-content-center>
-            <ion-col>
-                <div>
-                 <ion-img class="cryptoanimal" src="../../assets/imgs/cryptotoucan.gif" ></ion-img>
-                </div>
-            </ion-col>
-            <ion-col>
-                    <div>
-                     <ion-img class="cryptoanimal"  src="../../assets/imgs/cryptofrog.gif" ></ion-img>
-                    </div>
-                </ion-col>
-                <ion-col>
-                        <div>
-                         <ion-img class="cryptoanimal"   src="../../assets/imgs/cryptocougar.gif" ></ion-img>
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                            <div>
-                             <ion-img class="cryptoanimal"   src="../../assets/imgs/cryptohippo.gif" ></ion-img>
-                            </div>
-                        </ion-col>
-        </ion-row>
-        <ion-row justify-content-center>
-                <ion-col>
-                    <div>
-                     <ion-img class="cryptoanimal" src="../../assets/imgs/cryptobird.gif" ></ion-img>
-                    </div>
-                </ion-col>
-                <ion-col>
-                        <div>
-                         <ion-img class="cryptoanimal"  src="../../assets/imgs/cryptopenguin.gif" ></ion-img>
-                        </div>
-                    </ion-col>
-                    <ion-col>
-                            <div>
-                             <ion-img class="cryptoanimal"   src="../../assets/imgs/cryptobug.gif" ></ion-img>
-                            </div>
-                        </ion-col>
-                        <ion-col>
-                                <div>
-                                 <ion-img class="cryptoanimal"   src="../../assets/imgs/cryptokoala.gif" ></ion-img>
-                                </div>
-                            </ion-col>
-            </ion-row> -->
-<!-- </ion-grid>
+ </ion-grid>
+
 <ion-grid *ngSwitchCase="'stats'">
         <ion-row><br></ion-row>
         <ion-row justify-content-center>
@@ -148,9 +101,9 @@
                 <h4 class="stats">25</h4><br>
                 Animals in Nature Reserve
             </ion-col>
-        </ion-row> -->
+        </ion-row>
         <ion-row><br></ion-row>
-        <!-- <ion-row><br></ion-row>
+         <ion-row><br></ion-row>
         <ion-row>
             <ion-card>
                 <ion-card-header>
@@ -164,9 +117,6 @@
             <canvas piechart options="animation: true, " legend=true responsive=true data="chart" width="300" height="300"></canvas>
           </div>
       </ion-row>
-</div> -->
-
-
 
         <ion-row justify-content-center style="text-align:center">
             <div padding>
@@ -174,5 +124,9 @@
             <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
         </div></ion-row>
     </ion-grid>
+
+    
+
+</div>
 
 </ion-content>

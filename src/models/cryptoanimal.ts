@@ -1,6 +1,8 @@
 
 export class Cryptoanimal {
-    id: number;
+    animal_id: number;
     name: string;
-    image: string;
+    img: string;
+    criteria: string;
+    description:  string;
 }

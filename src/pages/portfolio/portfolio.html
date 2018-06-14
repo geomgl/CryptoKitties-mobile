@@ -22,7 +22,7 @@
         </ion-title>
         <ion-buttons end>
   
-            <button ion-button icon-only (click)="navigateToProfile()">
+            <button ion-button icon-only menuToggle>
                 <ion-icon name="md-menu"></ion-icon>
             </button>
         </ion-buttons>
@@ -55,11 +55,11 @@
             </div>
         </ion-col>
         <ion-col align-self-center justify-content-end>
-            <h4 class="stats">{{this.amount}}</h4><br>
+            <h4 class="stats">${{this.amount}}</h4><br>
             Raised for Conservation
         </ion-col>
         <ion-col align-self-center justify-content-end>
-            <h4 class="stats">7</h4><br>
+            <h4 class="stats">{{this.count}}</h4><br>
             Conservation Projects
         </ion-col>
         <ion-col align-self-center justify-content-end>
@@ -73,8 +73,9 @@
     </button></ion-row>
 
     <ion-row>
+        <ion-col>
         <ion-list>
-            <ion-item>
+            <ion-item >
                 Total Monthly Donation Amount:
             </ion-item>
             <ion-item>
@@ -83,12 +84,12 @@
             </ion-item>
             <ion-item *ngFor="let MyCharity of user.myCharities">
               <ion-list no-lines>
-                {{myCharity.name}}
+                {{MyCharity.name}}
                 <ion-item>
-                      <div align="right"><ion-badge>{{myCharity.percentage}}% of Total Monthly Donations</ion-badge></div>
+                      <div align="right"><ion-badge>{{MyCharity?.percentage}}% of Total Monthly Donations</ion-badge></div>
                 </ion-item>
                 <ion-item>
-                  <ion-range min="0" max="100" step="5" snaps="true" [(ngModel)]="myCharity.percentage" color="danger">
+                  <ion-range min="0" max="100" step="5" snaps="true" [(ngModel)]="MyCharity.percentage" color="danger">
                     <ion-icon range-left small color="danger" name="heart"></ion-icon>
                     <ion-icon range-right color="danger" name="heart"></ion-icon>
                   </ion-range>
@@ -96,6 +97,7 @@
               </ion-list>
             </ion-item>
           </ion-list>
+        </ion-col>
 
     </ion-row> 
 

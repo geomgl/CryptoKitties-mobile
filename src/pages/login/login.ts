@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { HomePage } from '../home/home';
 import { Http } from '@angular/http';
+import { AuthService } from '../../auth.service';
+import { callbackify } from 'util';
 
 @Component({
   selector: 'page-login',

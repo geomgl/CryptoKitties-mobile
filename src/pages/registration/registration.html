@@ -1,30 +1,26 @@
 <ion-header>
-
-    <ion-navbar>
-        <ion-title>
-            <div class="pageName">Registration</div>
-
-            <div class="title1">
-                <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" width="40px" height="40px" />
-                <div style="color:black" (click)="navigateToHome()">CryptoSafari</div>
-            </div>
-        </ion-title>
-        <ion-buttons end>
-            <button ion-button icon-only (click)="navigateToCharities()">
-                <ion-title>
-                    <div style="color:black"> FAQs</div>
-                </ion-title>
-            </button>
-
-            <button ion-button icon-only (click)="navigateToProfile()">
-                <ion-icon name="md-menu"></ion-icon>
-            </button>
-        </ion-buttons>
-    </ion-navbar>
+        
+        <ion-navbar>
+            <ion-title>
+                <div class="pageName">Registration</div>
+                
+                <div class="title1">
+                    <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" width="40px" height="40px"/>
+                    <div style="color:black" (click)="navigateToHome()">CryptoSafari</div>
+                </div>
+            </ion-title>
+            <ion-buttons end>
+                <button  ion-button icon-only (click)="navigateToCharities()">
+                    <ion-title><div style= "color:black"> FAQs</div></ion-title>
+                </button>
+      
+                <button ion-button icon-only menuToggle>
+                    <ion-icon name="md-menu"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-navbar>
 
 </ion-header>
-
-
 
 <ion-content padding>
 
