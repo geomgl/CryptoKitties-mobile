@@ -1,6 +1,6 @@
 
 export class Certification {
-    id: number;
+    cert_id: number;
     name: string;
     description: string;
     image: string;

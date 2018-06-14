@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PortfolioPage } from '../portfolio/portfolio';
 import { ProfilePage } from '../profile/profile';
-import { Creditcard } from '../../models/creditcard';
+import { Paymentmethod } from '../../models/paymentMethod';
 import { Charity } from '../../models/charity';
 import { User } from '../../models/user';
 import { Donation } from '../../models/donation';

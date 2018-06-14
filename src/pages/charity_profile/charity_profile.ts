@@ -37,7 +37,7 @@ export class CharityProfilePage {
 
   //Instantiate a new certification instance
   var certification1 = new Certification();
-  certification1.id = 1;
+  certification1.cert_id = 1;
   certification1.name = "Global Charity Recognition";
   certification1.description = "Provided to Africa's top charity each year";
   certification1.image = "../../assets/imgs/certifications/rainforest.png";
@@ -45,7 +45,7 @@ export class CharityProfilePage {
 
 
   var certification2 = new Certification();
-  certification2.id = 2;
+  certification2.cert_id = 2;
   certification2.name = "Africa's Best Crypto Charity";
   certification2.description = "Given for excellence in crypto charity work";
   certification2.image = "../../assets/imgs/certifications/iso.png";
@@ -53,7 +53,7 @@ export class CharityProfilePage {
 
 
   var certification3 = new Certification();
-  certification3.id = 3;
+  certification3.cert_id = 3;
   certification3.name = "Top 100 Charities for Coders";
   certification3.description = "Recognition for charities that have excellent development environments";
   certification3.image = "../../assets/imgs/certifications/truecharity.png";
