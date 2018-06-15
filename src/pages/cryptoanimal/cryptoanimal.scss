@@ -28,6 +28,13 @@ p {
 
 }
 
+.cost {
+    text-emphasis: bold;
+    font-size: 30px;
+    color: white;
+    align-items: left;
+}
+
 .orangeback {
     background-color: map-get($colors, primary);
     padding: 30px;
