@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar hideBackButton>
         <ion-title>
-            <div style="float:left; display:flex; align-self: center;"align-title:center>Charities</div>
+            <!-- <div style="float:left; display:flex; align-self: center;"align-title:center>Charities</div> -->
             
             <div class="title" style="float:center;">
                 <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
@@ -39,33 +39,10 @@
                 </ion-segment-button>
         </ion-segment>
         <ion-grid>
-                <ion-row><br></ion-row>
-                <ion-row justify-content-center>
-                                <!-- align="left" -->
-                    <ion-col>
-                        <div>
-                            <ion-img class="profilepic"  src="../../assets/imgs/user.png" ></ion-img>
-                            <br>
-                            <!-- <div class="profileText">{{this.firstName}} {{this.lastName}}</div> -->
-                        </div>
-                    </ion-col>
-                    <ion-col align-self-center justify-content-end>
-                        <h4 class="stats">$2,500</h4><br>
-                        Raised for Conservation
-                    </ion-col>
-                    <ion-col align-self-center justify-content-end>
-                        <h4 class="stats">7</h4><br>
-                        Conservation Projects
-                    </ion-col>
-                    <ion-col align-self-center justify-content-end>
-                        <h4 class="stats">25</h4><br>
-                        Animals in Nature Reserve
-                    </ion-col>
-                </ion-row>
     <ion-row><br></ion-row>
     <ion-row justify-content-center>
             <ion-col>
-            <div class="cryptoAnimalText"> My Charities</div>
+            <div class="cryptoAnimalText"> Explore New Safari Charities</div>
             <div class="block_1 hline-bottom"></div></ion-col>
             
      </ion-row>
@@ -74,7 +51,7 @@
     <ion-row *ngFor="let row of grid">
         <ion-col class="col-border" *ngFor="let charity of row">
                 <ion-avatar item-start>
-                        <ion-img class="charitypic"  src={{charity.logo}} (click)="navigateToCharityProfile(charity)"></ion-img>
+                        <ion-img class="charitypic"  src={{charity.img}} (click)="navigateToCharityProfile(charity)"></ion-img>
                     <!-- <ion-icon  name={{charity.button}} (click)="navigateToCharityProfile(charity)" ></ion-icon> -->
                 </ion-avatar>
                 <h2 class="charityname" (click)="navigateToCharityProfile(charity)" >{{charity.name}}</h2>

@@ -10,6 +10,7 @@ import { Charity } from '../../models/charity';
 import { User } from '../../models/user';
 import { Donation } from '../../models/donation';
 import { CryptoanimalPage } from '../cryptoanimal/cryptoanimal';
+import { Http } from '@angular/http';
 
 @IonicPage()
 @Component({
@@ -33,14 +34,17 @@ export class ProfilePage {
   public user: User = new User();
   public charity: Charity = new Charity();
   public amount: number;
-  public donation: Donation = new Donation();
+  public donation_total: number = 0;
+  public donation_count: number = 0;
+  public donations: Array<Donation> = [];
 
   public cryptoanimals: Array<Cryptoanimal> = [];
 
   grid: Array<Array<Cryptoanimal>>; //array of arrays of cryptoanimals
 
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private appRef: ApplicationRef) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private appRef: ApplicationRef,
+    public http: Http) {
     this.icons = "logo-octocat";
 
     var cryptoanimal1 = new Cryptoanimal();
@@ -141,7 +145,28 @@ export class ProfilePage {
 
   }
 
+  donation_list() {  this.http
+    .get("http://localhost:3000/users/" + this.user.user_id + "/donations") 
+    .subscribe (
+      Result => {
+      console.log(Result);
+      this.donations = Result.json() as Array<Donation>;
+      
+      for(let i = 0; i < this.donations.length; i++) {
+        this.donation_total += this.donations[i].amount;
+      }
+      this.donation_count = this.donations.length;
+  
+      },
+      Error => {
+      console.log(Error);
+      }
+      );  
+  
+  }
+
   ionViewDidLoad() {
+    this.donation_list();
     // this.firstName = this.navParams.get("firstName");
     // this.lastName = this.navParams.get("lastName");
     // this.email = this.navParams.get("email");

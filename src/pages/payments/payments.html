@@ -28,22 +28,32 @@
 
 
 <ion-content padding>
-<!-- <h3>{{charity.name}}</h3> -->
+<h3>{{charity.name}}</h3>
 
 Your donations will help preserve animals and cryptoanimals
-<ion-item>
-    <ion-label>Donation type</ion-label>
-    <ion-select [(ngModel)]="toppings" multiple="false" placeholder="Monthly">
-      <ion-option>One Time</ion-option>
-      <ion-option>Monthly</ion-option>
-      <ion-option>Yearly</ion-option>
-    </ion-select>
-  </ion-item>
-
-
+<br>
+      <br><br>
+      <hr>
+      <br>
     <ion-list>
         <ion-item>
-            <ion-label>Amount</ion-label>
+            <ion-label>Project</ion-label>
+            <ion-select [(ngModel)]="proj_select" multiple="false">
+              <ion-option *ngFor="let project of projects">
+                {{project.name}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+        <ion-item>
+            <ion-label>Donation type</ion-label>
+            <ion-select [(ngModel)]="toppings" required multiple="false" placeholder="Monthly">
+              <ion-option>One Time</ion-option>
+              <ion-option>Monthly</ion-option>
+              <ion-option>Yearly</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Amount $</ion-label>
             <ion-input type="number" placeholder="$100" [(ngModel)]="amount"></ion-input>
           </ion-item>
         <ion-item>
@@ -58,7 +68,7 @@ Your donations will help preserve animals and cryptoanimals
 
           <ion-item>
               <ion-label>Expiration Date</ion-label>
-              <ion-datetime displayFormat="YYYY/MM" placeholder="YYYY/MM"></ion-datetime>
+              <ion-datetime displayFormat="YYYY/MM" placeholder="YYYY/MM" max="2030-10-31"></ion-datetime>
             </ion-item>
 
         <ion-item>
@@ -69,7 +79,7 @@ Your donations will help preserve animals and cryptoanimals
       </ion-list>
       
       <div padding>
-        <button ion-button block (click)="navigateToPortfolio()">Help the Animals</button>
+        <button ion-button block (click)="donate()">Help the Animals</button>
       </div>
 
 </ion-content>

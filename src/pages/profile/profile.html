@@ -3,9 +3,9 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1-beta.2/Chart.min.js"></script>
         <script src="angles.js"></script>
         
-        <ion-navbar>
+        <ion-navbar hideBackButton>
                 <ion-title>
-                    <div style="float:left; display:flex; align-self: center;"align-title:center>My Profile</div>
+                    <!-- <div style="float:left; display:flex; align-self: center;"align-title:center>My Profile</div> -->
                     
                     <div class="title" style="float:center;">
                         <img src="../../assets/imgs/cryptolion.png" (click)="navigateToHome()" float-center  align-self-center width="40px" height="10px"style="display:inline-block" height="40px"/>
@@ -49,11 +49,13 @@
                 </div>
             </ion-col>
             <ion-col align-self-center justify-content-end>
-                <h4 class="stats">$2,500</h4><br>
-                <div>Raised for Conservation</div>
+
+                <h4 class="stats">${{this.donation_total}}</h4><br>
+                <div>Raised for Conservation </div>
+
             </ion-col>
             <ion-col align-self-center justify-content-end>
-                <h4 class="stats">7</h4><br>
+                <h4 class="stats">{{this.donation_count}}</h4><br>
                 <div> Conservation Projects</div>
             </ion-col>
             <ion-col align-self-center justify-content-end>

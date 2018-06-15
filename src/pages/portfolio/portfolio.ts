@@ -9,6 +9,8 @@ import { Charity } from '../../models/charity';
 import { Slice } from '../../models/slice';
 import { SlicePipe } from '@angular/common';
 import { MyCharity } from '../../models/myCharity';
+import { Http } from '@angular/http';
+import { Donation } from '../../models/donation';
 
 /**
  * Generated class for the PortfolioPage page.
@@ -23,37 +25,38 @@ import { MyCharity } from '../../models/myCharity';
   templateUrl: 'portfolio.html',
 })
 export class PortfolioPage {
+  icons: string;
+
 
     public user: User = new User();
     public charity: Charity = new Charity();
     public technologies: Array<Slice> = [];
-    public amount: number = 0;
-    public count: number = 0;
+    public donation_total: number = 0;
+    public donation_count: number = 0;
+    public donations: Array<Donation> = [];
+  
     
     constructor(public navCtrl: NavController,
-      public navParams: NavParams) {
+      public navParams: NavParams, public http: Http) {
+        this.icons = "stats"
       
       this.user = this.navParams.get("user");
       let colorArr: Array<string> = ["rgb(128,0,0)", "rgb(220,20,60)", "rgb(255,0,0)", "rgb(255,127,80)", "rgb(205,92,92)", "rgb(255,165,0)", "rgb(255,215,0)", "rgb(128,128,0)", "rgb(154,205,50)", "rgb(85,107,47)", "rgb(124,252,0)", "rgb(144,238,144)", "rgb(143,188,143)", "rgb(47,79,79)", "rgb(0,139,139)", "rgb(0,255,255)", "rgb(224,255,255)", "rgb(70,130,180)", "rgb(30,144,255)", "rgb(25,25,112)"];
   
-      if (this.navParams.get('amount')) {
-        this.amount = this.navParams.get('amount');
-      }
-
-      if (this.navParams.get('count')) {
-        this.amount = this.navParams.get('count');
-      }
-  
       if (this.navParams.get('charity')) {
         this.charity = this.navParams.get('charity');
 
+
+
         let newCharity = new MyCharity();
-        newCharity.id = this.charity.id;
+        newCharity.id = this.charity.charity_id;
         newCharity.name = this.charity.name;
         newCharity.percentage = 0;
   
         this.user.myCharities.push(newCharity);
   
+
+
       }
       //Keep going until you hit all of the elements in the array
       for(let i = 0; i < this.user.myCharities.length; i++) {
@@ -65,40 +68,82 @@ export class PortfolioPage {
       }
     }
   
-  
+
+donation_list() {  this.http
+  .get("http://localhost:3000/users/" + this.user.user_id + "/donations") 
+  .subscribe (
+    Result => {
+   // console.log(Result);
+    this.donations = Result.json() as Array<Donation>;
+    
+   for(let i = 0; i < this.donations.length; i++) {
+     this.chartLabels = this.donations[i].amount;
+   }
+
+
+    for(let i = 0; i < this.donations.length; i++) {
+      this.donation_total += this.donations[i].amount;
+      //console.log(this.chartLabels);
+      console.log(this.chartValues);
+      
+    }
+    this.donation_count = this.donations.length;
+    },
+      Error => {
+      console.log(Error);
+      }
+    );  
+
+}
+
+test() {
+  console.log(this.donations);
+}
+
     @ViewChild('doughnutCanvas') doughnutChart;
-  
-    public doughnutChartel: any;
     public chartLabels: any = [];
     public chartValues: any = [];
+    public doughnutChartel: any;
     public chartColours: any = [];
     public chartHoverColours: any = [];
     public chartLoadingEl: any;
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad PortfolioPage');
-    this.defineChartData();
     this.createDoughnutChart();
+    this.donation_list();
+    // this.defineChartData();
   }
 
   update() {
     this.navCtrl.push(PortfolioPage, {
       user: this.user,
-      amount: this.amount
+      //amount: this.amount
     });
   }
 
-  defineChartData(): void {
-    let k: any;
 
-    for (k in this.technologies) {
-      var tech = this.technologies[k];
+  // defineChartData() {
+  //   for(let i = 0; i < this.donations.length; i++) {
+  //     this.chartLabels = this.donations[i].charity_id;
+  //   }
 
-      this.chartLabels.push(tech.technology);
-      this.chartValues.push(tech.time);
-      this.chartColours.push(tech.color);
-    }
-  }
+  //   for(let i = 0; i < this.donations.length; i++) {
+  //     this.chartValues = this.donations[i].amount;
+  //   }
+
+
+
+  // defineChartData(): void {
+  //   let k: any;
+
+  //   for (k in this.donations) {
+  //     var don = this.donations[k];
+
+  //     this.chartLabels.push(don.charity_id);
+  //     this.chartValues.push(don.amount);
+  //   }
+  // }
 
   createDoughnutChart() {
 
@@ -106,24 +151,29 @@ export class PortfolioPage {
       {
         type: 'doughnut',
         data: {
-          labels: this.chartLabels,
-          datasets: [{
-            label: 'Donation Breakdown',
-            data: this.chartValues,
-            // duration: 2000,
-            // easing: 'easeInQuart',
-            backgroundColor: this.chartColours,
+             labels: ["Giving Back to Africa", "GWC", "Helping Rhinos", "IUCN", "Turtle Conservancy"],
+                   datasets: [{
+                     label: 'Amount Donated',
+                   data: [875, 125, 1000, 200, 275],
+          
+          
+          
+          //labels: ["", "GWC", "Helping Rhinos", "IUCN", "Turtle Conservancy"],["", "GWC", "", "IUCN", ""
+         // datasets: [{
+                     //   label: '# of Votes',
+                       // data: [12, 19, 3, 5, 2, 3],
+           // data: ["875", "125","1000","200","275"],
+            backgroundColor: [
+                              'rgba(255, 99, 132)',
+                              'rgba(54, 162, 235)',
+                              'rgba(255, 206, 86)',
+                              'rgba(75, 192, 192)',
+                              'rgba(153, 102, 255)'
+                          ],
           }]
         },
         options: {
-          maintainAspectRatio: false,
           layout: {
-            padding: {
-              left: 10,
-              right: 0,
-              top: 0,
-              bottom: 0
-            }
           },
           animation: {
             duration: 5000

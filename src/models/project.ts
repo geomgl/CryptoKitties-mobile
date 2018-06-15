@@ -1,7 +1,9 @@
 export class Project {
-    id: number;
+    project_id: number;
+    charity_id: number;
     name: string;
     subhead: string;
     description: string;
-    image: string;
+    img: string;
+    date: string;
 }

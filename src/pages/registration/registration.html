@@ -1,7 +1,7 @@
 <ion-header>
         
-        <ion-navbar>
-            <ion-title>
+        <ion-navbar class="title1">
+            <ion-title >
                 <div class="pageName">Registration</div>
                 
                 <div class="title1">
@@ -10,9 +10,9 @@
                 </div>
             </ion-title>
             <ion-buttons end>
-                <button  ion-button icon-only (click)="navigateToCharities()">
+                <!-- <button  ion-button icon-only (click)="navigateToCharities()">
                     <ion-title><div style= "color:black"> FAQs</div></ion-title>
-                </button>
+                </button> -->
       
                 <button ion-button icon-only menuToggle>
                     <ion-icon name="md-menu"></ion-icon>
@@ -21,47 +21,45 @@
         </ion-navbar>
 
 </ion-header>
-    
-
 
 <ion-content padding>
 
-        <br>
-        <h1 class="header">Welcome to CryptoSafari</h1>
+    <br>
+    <h1 class="header">Welcome to CryptoSafari</h1>
     <p>
     </p>
 
     <ion-list>
 
         <ion-item>
-            <ion-label >First name</ion-label>
-            <ion-input type="text" [(ngModel)]="firstName"></ion-input>
-        </ion-item>
-            
-        <ion-item>
-            <ion-label >Last name</ion-label>
-            <ion-input type="text" [(ngModel)]="lastName"></ion-input>
+            <ion-label>First name</ion-label>
+            <ion-input type="text" [(ngModel)]="first_name"></ion-input>
         </ion-item>
 
         <ion-item>
-                <ion-label>Email</ion-label>
-                <ion-input type="email" [(ngModel)]="email"></ion-input>
+            <ion-label>Last name</ion-label>
+            <ion-input type="text" [(ngModel)]="last_name"></ion-input>
         </ion-item>
-            
-            <ion-item>
-                <ion-label>Password</ion-label>
-                <ion-input type="password" [(ngModel)]="password"></ion-input>
-            </ion-item>
-            
-            <ion-item>
-                <ion-label>Confirm password</ion-label>
-                <ion-input type="password"></ion-input>
-                </ion-item>
 
-            </ion-list>
-            <div padding>
-                <button ion-button (click)="navigateToProfile()" block>Join the Safari</button>
-                </div>
+        <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Confirm password</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+
+    </ion-list>
+    <div padding>
+        <button ion-button (click)="register()" block>Join the Safari</button>
+    </div>
 
 
 </ion-content>
