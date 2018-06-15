@@ -41,6 +41,7 @@ export class ProfilePage {
   public cryptoanimals: Array<Cryptoanimal> = [];
 
   grid: Array<Array<Cryptoanimal>>; //array of arrays of cryptoanimals
+  user_info: Array<User> = [];
 
  
   constructor(public navCtrl: NavController, public navParams: NavParams, private appRef: ApplicationRef,
@@ -165,8 +166,24 @@ export class ProfilePage {
   
   }
 
+  profile_info() {  this.http
+    .get("http://localhost:3000/users/" + this.user.user_id) 
+    .subscribe (
+      Result => {
+      console.log(Result);
+      this.user_info = Result.json() as Array<User>;
+    
+      },
+      Error => {
+      console.log(Error);
+      }
+      );  
+  
+  }
+
   ionViewDidLoad() {
     this.donation_list();
+    this.profile_info();
     // this.firstName = this.navParams.get("firstName");
     // this.lastName = this.navParams.get("lastName");
     // this.email = this.navParams.get("email");

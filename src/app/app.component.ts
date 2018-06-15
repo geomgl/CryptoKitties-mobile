@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
 import { PaymentsPage } from '../pages/payments/payments';
 import { CharitiesPage } from '../pages/charities/charities';
+import { ProfileSettingsPage } from '../pages/profile-settings/profile-settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -40,8 +41,8 @@ export class MyApp {
       case "PaymentsPage":
         this.nav.push(PaymentsPage);
         return;
-      case "CharitiesPage":
-        this.nav.push(CharitiesPage);
+      case "ProfileSettingsPage":
+        this.nav.push(ProfileSettingsPage);
         return;
     }
   }
