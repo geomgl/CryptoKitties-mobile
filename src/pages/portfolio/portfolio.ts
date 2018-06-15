@@ -151,17 +151,24 @@ test() {
       {
         type: 'doughnut',
         data: {
-          labels: this.chartLabels,
-          datasets: [{
-            label: 'Donation Breakdown',
-            data: this.chartValues,
+             labels: ["Giving Back to Africa", "GWC", "Helping Rhinos", "IUCN", "Turtle Conservancy"],
+                   datasets: [{
+                     label: 'Amount Donated',
+                   data: [875, 125, 1000, 200, 275],
+          
+          
+          
+          //labels: ["", "GWC", "Helping Rhinos", "IUCN", "Turtle Conservancy"],["", "GWC", "", "IUCN", ""
+         // datasets: [{
+                     //   label: '# of Votes',
+                       // data: [12, 19, 3, 5, 2, 3],
+           // data: ["875", "125","1000","200","275"],
             backgroundColor: [
-                              'rgba(255, 99, 132, 0.2)',
-                              'rgba(54, 162, 235, 0.2)',
-                              'rgba(255, 206, 86, 0.2)',
-                              'rgba(75, 192, 192, 0.2)',
-                              'rgba(153, 102, 255, 0.2)',
-                              'rgba(255, 159, 64, 0.2)'
+                              'rgba(255, 99, 132)',
+                              'rgba(54, 162, 235)',
+                              'rgba(255, 206, 86)',
+                              'rgba(75, 192, 192)',
+                              'rgba(153, 102, 255)'
                           ],
           }]
         },
