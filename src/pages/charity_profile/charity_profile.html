@@ -53,22 +53,20 @@ style="background-color:grey; font:roboto; color:white"
                     </ion-col>
                     <ion-col align-self-center justify-content-end>
                         <h4 class="stats">9</h4><br>
-                        Animals Available
+                        Animals
                     </ion-col>
                 </ion-row>
-                <ion-row align-self-left justify-content-left><br>
-                    <ion-col><h1><br>{{charity.name}}</h1>
-                    <div class="location">{{charity.location}}</div></ion-col>
-                    <ion-col align-self-left justify-content-left><p class="about">About</p><br></ion-col>
-                    <ion-col><br></ion-col>
-                    <ion-col><br></ion-col>
-                </ion-row>
-                <ion-row align-self-center justify-content-left>
-                    <ion-col class="paymentButton"><button ion-button (click)="navigateToPayments(charity)">+ Add to Portfolio</button></ion-col>
-                    <ion-col col-19  align="left" justify-content-left class="charityDesc">{{charity.description}}</ion-col>
-                    <ion-col><br></ion-col>
-                    <ion-col><br></ion-col>
-                </ion-row>
+            </ion-grid>
+
+                
+                   <h1>{{charity.name}}</h1>
+                    <div class="location">{{charity.location}}</div>
+                    <p class="charityDesc">{{charity.description}}</p>
+                
+                    <div class="paymentButton"><button ion-button (click)="navigateToPayments(charity)">+ Add to Portfolio</button></div>
+                    
+                
+                <ion-grid>
                 <ion-row><br></ion-row>
                 <ion-row>
                         <div class="block_1 hline-certs"></div>

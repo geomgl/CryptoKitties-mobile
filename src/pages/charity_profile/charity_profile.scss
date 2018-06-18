@@ -44,7 +44,6 @@ page-charity_profile {
     }
 
     .charityDesc {
-        padding-left: 142px;
         padding-top: 0px;
     }
 
@@ -62,6 +61,7 @@ page-charity_profile {
     .location {
         padding-top: 2px;
         font-size: 14px;
+        color:  map-get($colors, primary);
     }
 
     .hline-certs {
