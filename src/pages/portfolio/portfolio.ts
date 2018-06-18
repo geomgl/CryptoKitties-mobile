@@ -34,6 +34,7 @@ export class PortfolioPage {
     public donation_total: number = 0;
     public donation_count: number = 0;
     public donations: Array<Donation> = [];
+    user_info: Array<User> = [];
   
     
     constructor(public navCtrl: NavController,
@@ -112,6 +113,7 @@ test() {
     console.log('ionViewDidLoad PortfolioPage');
     this.createDoughnutChart();
     this.donation_list();
+    this.profile_info();
     // this.defineChartData();
   }
 
@@ -213,6 +215,20 @@ test() {
   //     }
 
   // });
+}
+profile_info() {  this.http
+  .get("http://localhost:3000/users/" + this.user.user_id) 
+  .subscribe (
+    Result => {
+    console.log(Result);
+    this.user_info = Result.json() as Array<User>;
+  
+    },
+    Error => {
+    console.log(Error);
+    }
+    );  
+
 }
 
   navigateToProfile() {

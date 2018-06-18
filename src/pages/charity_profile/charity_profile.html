@@ -78,7 +78,7 @@ style="background-color:grey; font:roboto; color:white"
                 <ion-row *ngFor="let row of grid">
                         <ion-col align-self-center class="col-border" *ngFor="let certification of row">
                                 <ion-avatar item-start>
-                                        <ion-img  class="certpic"  src={{certification.img}}></ion-img>
+                                        <ion-img  class="certpic"  src="{{certification.img}}"></ion-img>
                                 </ion-avatar>
                                 <h2 class="certname" >{{certification.name}}</h2>
                                 <p >{{certification.description}}</p>
@@ -94,7 +94,7 @@ style="background-color:grey; font:roboto; color:white"
                 <ion-row *ngFor="let row of gridProj">
                         <ion-col class="col-border" *ngFor="let project of row">
                                 <ion-avatar item-start>
-                                        <ion-img align-self-center  class="projpic"  src={{project.img}}></ion-img>
+                                        <ion-img align-self-center  class="projpic"  src="{{project.img}}"></ion-img>
                                 </ion-avatar>
                                 <h2 class="certname" >{{project.name}}</h2>
                                 <p >{{project.description}}</p>
