@@ -13,11 +13,11 @@ import { PaymentsPage } from '../payments/payments';
 })
 export class HomePage {
   
-  public username: string;
+  public email: string;
   public password: string;
 
   constructor(public navCtrl: NavController, private app: App) {
-    this.username = "";
+    this.email = "";
 
        if (localStorage.getItem("TOKEN")) {
        this.app.getRootNav().setRoot(ProfilePage);
@@ -50,10 +50,10 @@ export class HomePage {
   }
 
   showData() {
-    alert(this.username);
+    alert(this.email);
   
   this.navCtrl.push(LoginPage, {
-    username: this.username,
+    email: this.email,
     password: this.password
   })
 
