@@ -4,6 +4,7 @@ import { ProfilePage } from '../profile/profile';
 import { CharitiesPage } from '../charities/charities';
 import { HomePage } from '../home/home';
 import { Http } from '@angular/http';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-registration',
@@ -18,7 +19,7 @@ export class RegistrationPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public http: Http) {}
+    public http: Http, public alertCtrl: AlertController) {}
 
   register() {
     // make call to server and check validity of login credentials 
@@ -41,8 +42,25 @@ export class RegistrationPage {
           });
         },
         error => {
-          console.log("Unable to register, please try again.");
-          alert("Unable to register, please try again.");
+          if (error.json().message == "email address already registered with another user") {
+            let alert = this.alertCtrl.create({
+              title: 'User Alreay Exists',
+              subTitle: 'Oops! That email address is already registered with another user.',
+              buttons: ['Try again']
+            });
+            alert.present();
+            console.log(error);
+          }
+
+          if (error.json().message == 'please enter valid email address') {
+            let alert = this.alertCtrl.create({
+              title: 'Invalid Email Address',
+              subTitle: 'Please enter a valid email address.',
+              buttons: ['Try again']
+            });
+            alert.present();
+            console.log(error);
+          }
         }
       );
 
