@@ -18,6 +18,7 @@ import {HttpModule} from '@angular/http';
 import { AuthService } from '../auth.service';
 import { CryptoanimalPage } from '../pages/cryptoanimal/cryptoanimal';
 
+
 @NgModule({ 
   declarations: [
     MyApp,

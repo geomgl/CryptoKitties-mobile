@@ -48,6 +48,9 @@ export class RegistrationPage {
 
   }
 
+  confirmPswd() {
+
+  }
 
   navigateToProfile() {
     this.navCtrl.push(ProfilePage, {
