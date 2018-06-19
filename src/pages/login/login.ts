@@ -18,15 +18,12 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public http: Http) { }
 
-  alertBox() {
-    alert("Incorrect username and/or password")
-  }
 
   login() {
     // make call to server and check validity of login credentials 
     this.http
       .post("http://localhost:3000/login", {
-        eamil: this.email,
+        email: this.email,
         password: this.password
       }).subscribe(
         result => {
@@ -39,7 +36,7 @@ export class LoginPage {
         },
         error => {
           console.log("invalid credentials");
-          alert("Incorrect username andor password");
+          alert("Incorrect username or password");
         }
       );
 

@@ -19,6 +19,7 @@ import { AuthService } from '../auth.service';
 import { CryptoanimalPage } from '../pages/cryptoanimal/cryptoanimal';
 import { ProfileSettingsPage } from '../pages/profile-settings/profile-settings';
 
+
 @NgModule({ 
   declarations: [
     MyApp,
