@@ -12,6 +12,15 @@ page-payments {
     .form-row{
         padding: 10px;
       }
+
+      .title {
+        // text-align: left;
+        // align-content: center;
+        text-emphasis: bold;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
     
       .StripeElement {
         background-color: white;

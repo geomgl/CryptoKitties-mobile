@@ -10,9 +10,9 @@ username: string = "";
 email: string = "";
 password: string = "";
 profile_pic: string = "";
-// //address_id: string = "";
-// myCharities: Array<MyCharity> = [];
-//   static myCharities: any;
+//address_id: string = "";
+myCharities: Array<MyCharity> = [];
+  static myCharities: any;
 
   
 

@@ -3,8 +3,8 @@
 // import { PortfolioPage } from '../portfolio/portfolio';
 // import { ProfilePage } from '../profile/profile';
 // import { Paymentmethod } from '../../models/paymentMethod';
-// import { Charity } from '../../models/charity';
-// import { User } from '../../models/user';
+import { Charity } from '../../models/charity';
+import { User } from '../../models/user';
 // import { Donation } from '../../models/donation';
 
 // /**
@@ -68,7 +68,14 @@ export class PaymentsPage {
   stripe = Stripe('pk_test_3As33OxveQ1MQCw9j2CEmXtj');
   card: any;
 
+
+  public user: User = new User();
+  public charity: Charity = new Charity();
+  public amount: number;
+  public count: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
@@ -79,7 +86,8 @@ export class PaymentsPage {
     let elements = this.stripe.elements();
     var style = {
       base: {
-        color: '#32325d',
+        // color: '#32325d',
+        color: 'black',
         lineHeight: '24px',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
@@ -87,6 +95,8 @@ export class PaymentsPage {
         '::placeholder': {
           color: '#aab7c4'
         }
+        
+
       },
       invalid: {
         color: '#fa755a',
@@ -111,8 +121,8 @@ export class PaymentsPage {
     form.addEventListener('submit', event => {
       event.preventDefault();
 
-      // this.stripe.createToken(this.card)
-      this.stripe.createSource(this.card).then(result => {
+      this.stripe.createToken(this.card).then(result => {
+      //this.stripe.createSource(this.card).then(result => {
         if (result.error) {
           var errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
