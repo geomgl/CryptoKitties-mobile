@@ -52,7 +52,7 @@ export class RegistrationPage {
             console.log(error);
           }
 
-          if (error.json().message == 'please enter valid email address') {
+          if (error.json().message == 'email address invalid') {
             let alert = this.alertCtrl.create({
               title: 'Invalid Email Address',
               subTitle: 'Please enter a valid email address.',
