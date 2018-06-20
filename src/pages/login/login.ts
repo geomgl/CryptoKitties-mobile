@@ -5,6 +5,8 @@ import { HomePage } from '../home/home';
 import { Http } from '@angular/http';
 import { AuthService } from '../../auth.service';
 import { callbackify } from 'util';
+import { AlertController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-login',
@@ -16,7 +18,7 @@ export class LoginPage {
   public password: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public http: Http) { }
+    public http: Http, public alertCtrl: AlertController) { }
 
 
   login() {
@@ -36,7 +38,13 @@ export class LoginPage {
         },
         error => {
           console.log("invalid credentials");
-          alert("Incorrect username or password");
+          let alert = this.alertCtrl.create({
+            title: 'Invalid credentials',
+            subTitle: 'Incorrect email address or password',
+            buttons: ['Try again']
+          });
+          alert.present();
+          console.log(error);
         }
       );
 

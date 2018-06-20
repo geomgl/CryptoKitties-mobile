@@ -10,6 +10,7 @@ username: string = "";
 email: string = "";
 password: string = "";
 profile_pic: string = "";
+confirm_password: string = "";
 //address_id: string = "";
 myCharities: Array<MyCharity> = [];
   static myCharities: any;

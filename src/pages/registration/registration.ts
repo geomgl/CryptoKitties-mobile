@@ -16,12 +16,33 @@ export class RegistrationPage {
   public last_name: string;
   public email: string;
   public password: string;
-
+  public confirm_password: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public http: Http, public alertCtrl: AlertController) {}
 
   register() {
+    // check to ensure that all required fields are provided
+    if (!this.first_name || !this.last_name || !this.email || !this. password || !this.confirm_password) {
+      let alert = this.alertCtrl.create({
+        title: 'Please enter all required fields.',
+        subTitle: 'Oops! Looks like something is missing',
+        buttons: ['Try again']
+      });
+      alert.present();
+      return;
+    }
+
+    if (this.password != this.confirm_password) {
+      let alert = this.alertCtrl.create({
+        title: 'Please Check Passwords',
+        subTitle: 'Ensure that "password" and "Confirm Password" match.',
+        buttons: ['Try again']
+      });
+      alert.present();
+      return;
+    }
+
     // make call to server and check validity of login credentials 
     this.http
       .post("http://localhost:3000/register", {
