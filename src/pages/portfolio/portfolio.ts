@@ -74,21 +74,38 @@ donation_list() {  this.http
   .get("http://localhost:3000/users/" + this.user.user_id + "/donations") 
   .subscribe (
     Result => {
-   // console.log(Result);
-    this.donations = Result.json() as Array<Donation>;
-    
-   for(let i = 0; i < this.donations.length; i++) {
-     this.chartLabels = this.donations[i].amount;
-   }
+      // console.log(Result);
+      this.donations = Result.json() as Array<Donation>;
 
+      let chartEntries = {}; // charity ID -> donation amount
 
-    for(let i = 0; i < this.donations.length; i++) {
-      this.donation_total += this.donations[i].amount;
-      //console.log(this.chartLabels);
-      console.log(this.chartValues);
-      
-    }
-    this.donation_count = this.donations.length;
+      for (let i = 0; i < this.donations.length; i++) {
+        let { charity_id } = this.donations[i];
+
+        if (!chartEntries[charity_id]) {
+          chartEntries[charity_id] = 0;
+        }
+
+        chartEntries[charity_id] += this.donations[i].amount;
+      }
+
+      this.chartLabels = Object.keys(chartEntries);
+      this.chartValues = this.chartLabels.map(charity_id => chartEntries[charity_id]);
+        
+      // for(let i = 0; i < this.donations.length; i++) {
+      //   this.chartLabels[i] = this.donations[i].charity_id;
+      //   this.chartValues[i] = this.donations[i].amount;
+      // }
+
+      for(let i = 0; i < this.donations.length; i++) {
+        this.donation_total += this.donations[i].amount;
+        //console.log(this.chartLabels);
+        console.log(this.chartValues);
+        
+      }
+      this.donation_count = this.donations.length;
+
+      this.createDoughnutChart();
     },
       Error => {
       console.log(Error);
@@ -111,7 +128,6 @@ test() {
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad PortfolioPage');
-    this.createDoughnutChart();
     this.donation_list();
     this.profile_info();
     // this.defineChartData();
@@ -153,10 +169,10 @@ test() {
       {
         type: 'doughnut',
         data: {
-             labels: ["Giving Back to Africa", "GWC", "Helping Rhinos", "IUCN", "Turtle Conservancy"],
+             labels: this.chartLabels,
                    datasets: [{
                      label: 'Amount Donated',
-                   data: [875, 125, 1000, 200, 275],
+                   data: this.chartValues,
           
           
           

@@ -51,7 +51,7 @@
     <ion-row *ngFor="let row of grid">
         <ion-col class="col-border" *ngFor="let charity of row">
                 <ion-avatar item-start>
-                        <ion-img class="charitypic"  src={{charity.img}} (click)="navigateToCharityProfile(charity)"></ion-img>
+                        <ion-img class="charitypic"  src="{{charity.img}}" (click)="navigateToCharityProfile(charity)"></ion-img>
                     <!-- <ion-icon  name={{charity.button}} (click)="navigateToCharityProfile(charity)" ></ion-icon> -->
                 </ion-avatar>
                 <h2 class="charityname" (click)="navigateToCharityProfile(charity)" >{{charity.name}}</h2>
