@@ -22,6 +22,18 @@ export class LoginPage {
 
 
   login() {
+    // ensure all credentials are provied
+    if (!this.email || !this.password) {
+      let alert = this.alertCtrl.create({
+        title: 'Please enter all required fields.',
+        subTitle: 'Oops! Looks like something is missing',
+        buttons: ['Try again']
+      });
+      alert.present();
+      return;
+    }
+   
+
     // make call to server and check validity of login credentials 
     this.http
       .post("http://localhost:3000/login", {
