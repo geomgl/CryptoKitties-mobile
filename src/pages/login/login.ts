@@ -45,7 +45,10 @@ export class LoginPage {
           this.navCtrl.push(ProfilePage, {
             email: this.email,
             password: this.password
-          });
+          }
+        )
+        this.navCtrl.setRoot(ProfilePage);
+
         },
         error => {
           console.log("invalid credentials");
@@ -56,6 +59,7 @@ export class LoginPage {
           });
           alert.present();
           console.log(error);
+          
         }
       );
 
