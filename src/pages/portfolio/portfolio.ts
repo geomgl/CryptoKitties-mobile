@@ -11,6 +11,7 @@ import { SlicePipe } from '@angular/common';
 import { MyCharity } from '../../models/myCharity';
 import { Http } from '@angular/http';
 import { Donation } from '../../models/donation';
+import { Cryptoanimal } from '../../models/cryptoanimal';
 
 /**
  * Generated class for the PortfolioPage page.
@@ -35,6 +36,9 @@ export class PortfolioPage {
     public donation_count: number = 0;
     public donations: Array<Donation> = [];
     user_info: Array<User> = [];
+    public cryptoanimal_count: number = 0;
+
+    public cryptoanimals: Array<Cryptoanimal> = [];
   
     
     constructor(public navCtrl: NavController,
@@ -74,23 +78,23 @@ donation_list() {  this.http
   .get("http://localhost:3000/users/" + this.user.user_id + "/donations") 
   .subscribe (
     Result => {
-      // console.log(Result);
+      console.log(Result);
       this.donations = Result.json() as Array<Donation>;
 
       let chartEntries = {}; // charity ID -> donation amount
 
       for (let i = 0; i < this.donations.length; i++) {
-        let { charity_id } = this.donations[i];
+        let { name } = this.donations[i];
 
-        if (!chartEntries[charity_id]) {
-          chartEntries[charity_id] = 0;
+        if (!chartEntries[name]) {
+          chartEntries[name] = 0;
         }
 
-        chartEntries[charity_id] += this.donations[i].amount;
+        chartEntries[name] += this.donations[i].amount;
       }
 
       this.chartLabels = Object.keys(chartEntries);
-      this.chartValues = this.chartLabels.map(charity_id => chartEntries[charity_id]);
+      this.chartValues = this.chartLabels.map(name => chartEntries[name]);
         
       // for(let i = 0; i < this.donations.length; i++) {
       //   this.chartLabels[i] = this.donations[i].charity_id;
@@ -112,6 +116,25 @@ donation_list() {  this.http
       }
     );  
 
+
+
+}
+
+cryptoanimal_list() {  this.http
+  .get("http://localhost:3000/users/" + this.user.user_id + "/cryptoanimals") 
+  .subscribe (
+    Result => {
+    console.log(Result);
+    this.cryptoanimals = Result.json() as Array<Cryptoanimal>;
+
+    this.cryptoanimal_count = this.cryptoanimals.length;
+
+    },
+    Error => {
+    console.log(Error);
+    }
+    );  
+
 }
 
 test() {
@@ -130,6 +153,7 @@ test() {
     console.log('ionViewDidLoad PortfolioPage');
     this.donation_list();
     this.profile_info();
+    this.cryptoanimal_list();
     // this.defineChartData();
   }
 
@@ -141,28 +165,6 @@ test() {
   }
 
 
-  // defineChartData() {
-  //   for(let i = 0; i < this.donations.length; i++) {
-  //     this.chartLabels = this.donations[i].charity_id;
-  //   }
-
-  //   for(let i = 0; i < this.donations.length; i++) {
-  //     this.chartValues = this.donations[i].amount;
-  //   }
-
-
-
-  // defineChartData(): void {
-  //   let k: any;
-
-  //   for (k in this.donations) {
-  //     var don = this.donations[k];
-
-  //     this.chartLabels.push(don.charity_id);
-  //     this.chartValues.push(don.amount);
-  //   }
-  // }
-
   createDoughnutChart() {
 
     this.doughnutChart = new Chart(this.doughnutChart.nativeElement,
@@ -173,19 +175,12 @@ test() {
                    datasets: [{
                      label: 'Amount Donated',
                    data: this.chartValues,
-          
-          
-          
-          //labels: ["", "GWC", "Helping Rhinos", "IUCN", "Turtle Conservancy"],["", "GWC", "", "IUCN", ""
-         // datasets: [{
-                     //   label: '# of Votes',
-                       // data: [12, 19, 3, 5, 2, 3],
-           // data: ["875", "125","1000","200","275"],
+        
             backgroundColor: [
-                              'rgba(255, 99, 132)',
-                              'rgba(54, 162, 235)',
-                              'rgba(255, 206, 86)',
-                              'rgba(75, 192, 192)',
+                              '#fa755a',
+                              '#8D9B4D',
+                              '#e91e63',
+                              '#59A5D8',
                               'rgba(153, 102, 255)'
                           ],
           }]
