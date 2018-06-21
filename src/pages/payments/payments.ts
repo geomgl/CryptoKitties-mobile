@@ -53,6 +53,7 @@ export class PaymentsPage {
   public proj_select: string = "";
   public today: string = new Date().toISOString();
   public charity_id: 1;
+  public name: "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.user = this.navParams.get("user");
@@ -68,6 +69,7 @@ export class PaymentsPage {
       amount: this.amount,
       user_id: this.user.user_id,
       charity_id: this.charity.charity_id,
+      charity_name: this.charity.name,
       frequency: this.toppings,
       // project_id: this.proj_select,
       date: this.today
