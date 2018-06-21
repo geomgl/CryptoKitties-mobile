@@ -32,7 +32,6 @@ export class LoginPage {
       alert.present();
       return;
     }
-   
 
     // make call to server and check validity of login credentials 
     this.http
