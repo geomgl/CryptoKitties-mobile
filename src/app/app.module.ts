@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule, MenuController, NavController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -18,6 +20,7 @@ import {HttpModule} from '@angular/http';
 import { AuthService } from '../auth.service';
 import { CryptoanimalPage } from '../pages/cryptoanimal/cryptoanimal';
 import { ProfileSettingsPage } from '../pages/profile-settings/profile-settings';
+
 
 
 @NgModule({ 
@@ -37,7 +40,9 @@ import { ProfileSettingsPage } from '../pages/profile-settings/profile-settings'
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
