@@ -47,8 +47,6 @@ export class LoginPage {
             password: this.password
           }
         )
-        this.navCtrl.setRoot(ProfilePage);
-
         },
         error => {
           console.log("invalid credentials");
