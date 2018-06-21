@@ -159,6 +159,7 @@ export class PaymentsPage {
     form.addEventListener('submit', event => {
       event.preventDefault();
 
+      // create token
       this.stripe.createToken(this.card).then(result => {
         //this.stripe.createSource(this.card).then(result => {
         if (result.error) {
@@ -166,9 +167,28 @@ export class PaymentsPage {
           errorElement.textContent = result.error.message;
         } else {
           console.log(result);
+          console.log("reached point where stripeTokenHandler is called")
+          stripeTokenHandler(result.token);
+
+
         }
       });
     });
+
+    // submit token and form to server
+    function stripeTokenHandler(token) {
+      // Insert the token ID into the form so it gets submitted to the server
+      var form = <HTMLFormElement>document.getElementById('payment-form');
+      var hiddenInput = document.createElement('input');
+      hiddenInput.setAttribute('type', 'hidden');
+      hiddenInput.setAttribute('name', 'stripeToken');
+      hiddenInput.setAttribute('value', token.id);
+      form.appendChild(hiddenInput);
+
+      // Submit the form
+      form.submit();
+    }
+
   }
 
 }
