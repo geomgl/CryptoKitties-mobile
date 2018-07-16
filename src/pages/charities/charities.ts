@@ -36,7 +36,7 @@ export class CharitiesPage {
     // charity1.name = "Giving Back to Africa";
     // charity1.mission = "Give back to Africa. Help bring the rains.";
     // charity1.description = "Help bring the rains back to Africa. We'll use our funding to call Toto.";
-    // charity1.img = "../../assets/imgs/logos/GivingBackToAfrica.png";
+    // charity1.img = "../../assets/imgs/logos/.png";
     // charity1.location = "Africa";
 
 
@@ -134,7 +134,8 @@ export class CharitiesPage {
         console.log(Result);
         this.charities = Result.json() as Array<Charity>;
 
-        this.grid = Array(Math.ceil(this.charities.length/4)); //MATHS!
+        // specify number of rows page should have; each row will have four columns
+        this.grid = Array(Math.ceil(this.charities.length / 4)); //MATHS!
 
         const num_cols = 4;
     

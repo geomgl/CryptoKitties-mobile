@@ -25,6 +25,10 @@ import { Donation } from '../../models/donation';
   templateUrl: 'portfolio.html',
 })
 export class PortfolioPage {
+ 
+  @ViewChild('doughnutCanvas') doughnutCanvas;
+
+ 
   icons: string;
 
 
@@ -35,6 +39,8 @@ export class PortfolioPage {
     public donation_count: number = 0;
     public donations: Array<Donation> = [];
     user_info: Array<User> = [];
+    public doughnutChart: any; 
+
   
     
     constructor(public navCtrl: NavController,
@@ -67,6 +73,36 @@ export class PortfolioPage {
         newSlice.color = colorArr[i];
         this.technologies.push(newSlice);
       }
+
+      this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+ 
+        type: 'doughnut',
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56",
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ]
+            }]
+        }
+
+    });
+
     }
   
 
@@ -118,7 +154,7 @@ test() {
   console.log(this.donations);
 }
 
-    @ViewChild('doughnutCanvas') doughnutChart;
+    @ViewChild('doughnutCanvas') 
     public chartLabels: any = [];
     public chartValues: any = [];
     public doughnutChartel: any;
@@ -198,6 +234,9 @@ test() {
           }
         }
       });
+
+
+
 
     this.chartLoadingEl = this.doughnutChart.generateLegend();
   
