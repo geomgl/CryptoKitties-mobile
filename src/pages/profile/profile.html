@@ -59,7 +59,7 @@
                 <div> Conservation Projects</div>
             </ion-col>
             <ion-col align-self-center justify-content-end>
-                <h4 class="stats">8</h4><br>
+                <h4 class="stats">{{this.cryptoanimal_count}}</h4><br>
                 <div>Animals in Nature Reserve</div>
             </ion-col>
         </ion-row>
@@ -82,7 +82,7 @@
 
  </ion-grid>
 
-<ion-grid *ngSwitchCase="'stats'">
+<!-- <ion-grid *ngSwitchCase="'stats'">
         <ion-row><br></ion-row>
         <ion-row justify-content-center>
                         
@@ -127,7 +127,7 @@
                 <button ion-button (click)="navigateToCharities()">See Charities</button>
             <button ion-button (click)="navigateToPayments()">Fund your Donations</button>
         </div></ion-row>
-    </ion-grid>
+    </ion-grid> -->
 
 </div>
 
